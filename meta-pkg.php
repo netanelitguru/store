@@ -1,45 +1,42 @@
 #!/usr/bin/env php
 <?php
 /**
- * MetaPkg - simple meta package manager in a single PHP file
+ * MetaPkg - single-file PHP meta package manager + simple HTML GUI
  *
- * Ecosystems:
- *   - pypi      : Python / PyPI (https://pypi.org)
- *   - composer  : Packagist / Composer (https://repo.packagist.org)
- *   - oss       : Generic OSS via GitHub repositories (owner/repo)
+ * CLI usage examples:
  *
- * Commands:
  *   php meta-pkg.php help
  *
- *   php meta-pkg.php info <ecosystem> <name>
- *   php meta-pkg.php deps <ecosystem> <name> [version]
- *   php meta-pkg.php install <ecosystem> <name> [version]
+ *   php meta-pkg.php info pypi requests
+ *   php meta-pkg.php deps pypi requests 2.32.3
+ *   php meta-pkg.php install pypi requests
  *
- *   php meta-pkg.php search oss "<query>"
- *   php meta-pkg.php issue  oss <owner/repo> "<title>" "<body>"
+ *   php meta-pkg.php info composer monolog/monolog
+ *   php meta-pkg.php install composer monolog/monolog 3.7.0
  *
- * To create GitHub issues or avoid rate limits:
- *   export GITHUB_TOKEN="ghp_xxxxx"
+ *   php meta-pkg.php search oss "json library"
+ *   php meta-pkg.php info oss symfony/symfony
+ *   php meta-pkg.php install oss symfony/symfony v7.1.0
+ *
+ *   # Create GitHub issue (requires GITHUB_TOKEN)
+ *   GITHUB_TOKEN=ghp_xxx php meta-pkg.php issue oss owner/repo "Bug title" "Body..."
+ *
+ *   # Crawl GitHub trending into JSON
+ *   php meta-pkg.php crawl trending trending.json
+ *
+ *   # Crawl GitHub repos by topic/tag into JSON
+ *   php meta-pkg.php crawl tag backup backup-tools.json 50
+ *
+ * Web GUI:
+ *   php -S 127.0.0.1:8000 meta-pkg.php
+ *   Open http://127.0.0.1:8000 in browser
  */
 
-///////////////////////////////////////
-// Basic CLI argument handling
-///////////////////////////////////////
-
-array_shift($argv); // drop script name
-$command   = $argv[0] ?? null;
-$ecosystem = $argv[1] ?? null;
-$name      = $argv[2] ?? null;
-$version   = $argv[3] ?? null;
-$arg1      = $argv[4] ?? null; // extra, e.g. search query / issue title
-$arg2      = $argv[5] ?? null; // extra, e.g. issue body
-
-///////////////////////////////////////
-// Configuration
-///////////////////////////////////////
+//////////////////////
+// Global config
+//////////////////////
 
 function metaPkgHomeDir(): string {
-    // Try HOME (Linux/macOS) then USERPROFILE (Windows)
     $home = getenv('HOME');
     if (!$home) {
         $home = getenv('USERPROFILE') ?: '.';
@@ -48,11 +45,11 @@ function metaPkgHomeDir(): string {
 }
 
 $META_ROOT = metaPkgHomeDir() . DIRECTORY_SEPARATOR . '.metapkg';
-
 if (!is_dir($META_ROOT)) {
-    mkdir($META_ROOT, 0777, true);
+    @mkdir($META_ROOT, 0777, true);
 }
 
+// GitHub headers
 $GITHUB_TOKEN = getenv('GITHUB_TOKEN') ?: null;
 $GITHUB_HEADERS = [
     'Accept: application/vnd.github+json',
@@ -62,15 +59,15 @@ if ($GITHUB_TOKEN) {
     $GITHUB_HEADERS[] = 'Authorization: Bearer ' . $GITHUB_TOKEN;
 }
 
-///////////////////////////////////////
+//////////////////////
 // Utility functions
-///////////////////////////////////////
+//////////////////////
 
 function show_help(): void {
     echo <<<TXT
-MetaPkg (PHP) - simple meta package manager (PyPI + Composer + OSS via GitHub)
+MetaPkg - single-file meta package manager (PyPI + Composer + OSS via GitHub)
 
-USAGE:
+CLI USAGE:
   php meta-pkg.php help
 
   php meta-pkg.php info <ecosystem> <name>
@@ -80,42 +77,36 @@ USAGE:
   php meta-pkg.php search oss "<query>"
   php meta-pkg.php issue  oss <owner/repo> "<title>" "<body>"
 
+  php meta-pkg.php crawl trending <output.json>
+  php meta-pkg.php crawl tag <topic> <output.json> [maxResults]
+
 ECOSYSTEMS:
   pypi       Python packages from https://pypi.org
   composer   PHP packages from https://repo.packagist.org
-  oss        Generic open-source via GitHub repositories (owner/repo)
-
-EXAMPLES:
-  php meta-pkg.php info pypi requests
-  php meta-pkg.php deps pypi requests 2.32.3
-  php meta-pkg.php install pypi requests
-
-  php meta-pkg.php info composer monolog/monolog
-  php meta-pkg.php install composer monolog/monolog 3.7.0
-
-  php meta-pkg.php search oss "logging library"
-  php meta-pkg.php info oss symfony/symfony
-  php meta-pkg.php install oss symfony/symfony v7.1.0
-
-  php meta-pkg.php issue oss owner/repo "Bug title" "Bug description"
+  oss        Generic OSS via GitHub repositories (owner/repo)
 
 TXT;
 }
 
 /**
- * Basic HTTP GET returning decoded JSON (array or object).
+ * HTTP GET returning decoded JSON (no cURL).
  */
 function http_get_json(string $url, array $headers = []): mixed {
+    $headerStr = '';
+    if (!empty($headers)) {
+        $headerStr = implode("\r\n", $headers);
+    }
+
     $opts = [
         'http' => [
             'method'  => 'GET',
-            'header'  => implode("\r\n", $headers),
-            'timeout' => 20
+            'header'  => $headerStr,
+            'timeout' => 30,
         ],
         'ssl' => [
             'verify_peer'      => true,
             'verify_peer_name' => true,
-        ]
+        ],
     ];
 
     $context = stream_context_create($opts);
@@ -135,24 +126,23 @@ function http_get_json(string $url, array $headers = []): mixed {
     return $json;
 }
 
-
 /**
- * Basic HTTP POST JSON -> JSON.
+ * HTTP POST JSON -> JSON (no cURL).
  */
 function http_post_json(string $url, array $headers, array $payload): mixed {
-    $headers[] = "Content-Type: application/json";
+    $headers[] = 'Content-Type: application/json';
 
     $opts = [
         'http' => [
             'method'  => 'POST',
             'header'  => implode("\r\n", $headers),
             'content' => json_encode($payload),
-            'timeout' => 20
+            'timeout' => 30,
         ],
         'ssl' => [
             'verify_peer'      => true,
             'verify_peer_name' => true,
-        ]
+        ],
     ];
 
     $context = stream_context_create($opts);
@@ -180,14 +170,14 @@ function ensure_pkg_dir(string $ecosystem, string $name, string $version, string
     $safeVer  = preg_replace('#[\\\/:"*?<>|]#', '_', $version);
     $path = $root . DIRECTORY_SEPARATOR . $ecosystem . DIRECTORY_SEPARATOR . $safeName . DIRECTORY_SEPARATOR . $safeVer;
     if (!is_dir($path)) {
-        mkdir($path, 0777, true);
+        @mkdir($path, 0777, true);
     }
     return $path;
 }
 
-///////////////////////////////////////
+//////////////////////
 // PyPI logic
-///////////////////////////////////////
+//////////////////////
 
 function get_pypi_package(string $name): ?array {
     $url = "https://pypi.org/pypi/" . rawurlencode($name) . "/json";
@@ -261,9 +251,9 @@ function get_pypi_version_info(array $pkg, string $version): ?array {
     return null;
 }
 
-///////////////////////////////////////
-// Composer / Packagist logic
-///////////////////////////////////////
+//////////////////////
+// Composer logic
+//////////////////////
 
 function get_composer_package(string $fullName): ?array {
     $url = "https://repo.packagist.org/p2/" . $fullName . ".json";
@@ -342,9 +332,9 @@ function get_composer_version_info(array $pkg, string $version): ?array {
     return null;
 }
 
-///////////////////////////////////////
+//////////////////////
 // OSS / GitHub logic
-///////////////////////////////////////
+//////////////////////
 
 function get_oss_repo(string $fullName, array $ghHeaders): ?array {
     $repoUrl = "https://api.github.com/repos/" . $fullName;
@@ -463,9 +453,134 @@ function oss_new_issue(string $fullName, string $title, string $body, array $ghH
     echo "Created issue #{$num} at {$html}" . PHP_EOL;
 }
 
-///////////////////////////////////////
-// High-level dispatch helpers
-///////////////////////////////////////
+//////////////////////
+// Crawlers
+//////////////////////
+
+// GitHub trending HTML (no API)
+function crawl_github_trending(string $outFile): void {
+    $url = "https://github.com/trending";
+    $html = @file_get_contents($url);
+    if (!$html) {
+        fwrite(STDERR, "Failed to fetch GitHub Trending\n");
+        return;
+    }
+
+    $results = [];
+    $parts = explode('Box-row', $html);
+
+    foreach ($parts as $block) {
+        if (!str_contains($block, 'href="/')) continue;
+
+        if (preg_match('#href="/([^"/]+/[^"]+)"#', $block, $m)) {
+            $repo = trim($m[1]);
+        } else {
+            continue;
+        }
+
+        $desc = "";
+        if (preg_match('#<p[^>]*>(.*?)</p>#s', $block, $m)) {
+            $desc = trim(strip_tags($m[1]));
+        }
+
+        $stars = "";
+        if (preg_match('#([\d,]+)\s+stars?#i', $block, $m)) {
+            $stars = $m[1];
+        }
+
+        $results[] = [
+            'repo'        => $repo,
+            'link'        => "https://github.com/" . $repo,
+            'description' => $desc,
+            'stars'       => $stars,
+        ];
+    }
+
+    $json = json_encode(
+        ['source' => 'github_trending', 'count' => count($results), 'results' => $results],
+        JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+    );
+
+    if (!file_put_contents($outFile, $json)) {
+        fwrite(STDERR, "Failed to write JSON to $outFile\n");
+        return;
+    }
+
+    echo "Stored " . count($results) . " trending repos to $outFile\n";
+}
+
+/**
+ * Crawl GitHub repositories by topic/tag and store JSON.
+ */
+function crawl_github_by_topic(string $topic, int $maxResults, string $outFile, array $ghHeaders): void {
+    $maxResults = max(1, min($maxResults, 100));
+
+    $all = [];
+    $page = 1;
+
+    while (count($all) < $maxResults) {
+        $remaining = $maxResults - count($all);
+        $perPage   = min(100, $remaining);
+
+        $q   = urlencode('topic:' . $topic . ' is:public');
+        $url = "https://api.github.com/search/repositories?q={$q}&sort=stars&order=desc&per_page={$perPage}&page={$page}";
+
+        $data = http_get_json($url, $ghHeaders);
+        if ($data === null) {
+            break;
+        }
+
+        $items = $data['items'] ?? [];
+        if (empty($items)) {
+            break;
+        }
+
+        foreach ($items as $item) {
+            $all[] = [
+                'full_name'   => $item['full_name'] ?? '',
+                'html_url'    => $item['html_url'] ?? '',
+                'description' => $item['description'] ?? '',
+                'language'    => $item['language'] ?? '',
+                'stars'       => $item['stargazers_count'] ?? 0,
+                'topics'      => $item['topics'] ?? [],
+            ];
+            if (count($all) >= $maxResults) {
+                break;
+            }
+        }
+
+        $page++;
+    }
+
+    if (empty($all)) {
+        echo "No repositories found for topic '{$topic}'\n";
+        return;
+    }
+
+    $payload = [
+        'source'  => 'github_topic',
+        'topic'   => $topic,
+        'count'   => count($all),
+        'results' => $all,
+    ];
+
+    $json = json_encode($payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    if ($json === false) {
+        fwrite(STDERR, "Failed to encode JSON: " . json_last_error_msg() . "\n");
+        return;
+    }
+
+    if (file_put_contents($outFile, $json) === false) {
+        fwrite(STDERR, "Failed to write JSON to {$outFile}\n");
+        return;
+    }
+
+    echo "Stored " . count($all) . " repos for topic '{$topic}' to {$outFile}\n";
+}
+
+//////////////////////
+// High-level wrappers
+//////////////////////
 
 function get_package(string $ecosystem, string $name, array $ghHeaders): ?array {
     return match (strtolower($ecosystem)) {
@@ -553,138 +668,6 @@ function show_pkg_deps(string $ecosystem, string $name, ?string $version, array 
         echo "  - [{$eco}] {$dn} {$vs}" . PHP_EOL;
     }
 }
-/**
- * Crawl GitHub repositories by topic/tag and store JSON.
- *
- * @param string      $topic      GitHub topic/tag, e.g. "backup", "monitoring"
- * @param int         $maxResults Max results to fetch (1–100)
- * @param string      $outFile    Path to JSON file to write
- * @param array       $ghHeaders  GitHub headers (with or without token)
- */
-function crawl_github_by_topic(string $topic, int $maxResults, string $outFile, array $ghHeaders): void {
-    // clamp
-    $maxResults = max(1, min($maxResults, 100));
-
-    $all = [];
-    $page = 1;
-
-    while (count($all) < $maxResults) {
-        $remaining = $maxResults - count($all);
-        $perPage = min(100, $remaining);
-
-        // Search repos by topic
-        // Docs: https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28#search-repositories
-        $q = urlencode('topic:' . $topic . ' is:public');
-        $url = "https://api.github.com/search/repositories?q={$q}&sort=stars&order=desc&per_page={$perPage}&page={$page}";
-
-        $data = http_get_json($url, $ghHeaders);
-        if ($data === null) {
-            break;
-        }
-
-        $items = $data['items'] ?? [];
-        if (empty($items)) {
-            break;
-        }
-
-        foreach ($items as $item) {
-            $all[] = [
-                'full_name'   => $item['full_name'] ?? '',
-                'html_url'    => $item['html_url'] ?? '',
-                'description' => $item['description'] ?? '',
-                'language'    => $item['language'] ?? '',
-                'stars'       => $item['stargazers_count'] ?? 0,
-                'topics'      => $item['topics'] ?? [],  // requires proper Accept header, but safe
-            ];
-            if (count($all) >= $maxResults) {
-                break;
-            }
-        }
-
-        $page++;
-    }
-
-    if (empty($all)) {
-        echo "No repositories found for topic '{$topic}'\n";
-        return;
-    }
-
-    $payload = [
-        'source'  => 'github_topic',
-        'topic'   => $topic,
-        'count'   => count($all),
-        'results' => $all,
-    ];
-
-    $json = json_encode($payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-    if ($json === false) {
-        fwrite(STDERR, "Failed to encode JSON: " . json_last_error_msg() . "\n");
-        return;
-    }
-
-    if (file_put_contents($outFile, $json) === false) {
-        fwrite(STDERR, "Failed to write JSON to {$outFile}\n");
-        return;
-    }
-
-    echo "Stored " . count($all) . " repos for topic '{$topic}' to {$outFile}\n";
-}
-
-function crawl_github_trending(string $outFile): void {
-    $url = "https://github.com/trending";
-
-    $html = @file_get_contents($url);
-    if (!$html) {
-        fwrite(STDERR, "Failed to fetch GitHub Trending\n");
-        return;
-    }
-
-    $results = [];
-
-    // Basic extraction (no regex nightmares)
-    // Each project block begins with "Box-row"
-    foreach (explode('Box-row', $html) as $block) {
-        if (!str_contains($block, 'href="/')) continue;
-
-        // Extract repo full name
-        if (preg_match('#href="/([^"]+)"#', $block, $m)) {
-            $repo = trim($m[1]);
-        } else {
-            continue;
-        }
-
-        // Extract description
-        $desc = "";
-        if (preg_match('#<p.*?>(.*?)</p>#s', $block, $m)) {
-            $desc = trim(strip_tags($m[1]));
-        }
-
-        // Extract number of stars (rough)
-        $stars = "";
-        if (preg_match('#([\d,]+)\s+stars?#i', $block, $m)) {
-            $stars = $m[1];
-        }
-
-        $results[] = [
-            'repo'        => $repo,
-            'link'        => "https://github.com/" . $repo,
-            'description' => $desc,
-            'stars'       => $stars,
-        ];
-    }
-
-    $json = json_encode(
-        ['source' => 'github_trending', 'count' => count($results), 'results' => $results],
-        JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
-    );
-
-    if (!file_put_contents($outFile, $json)) {
-        fwrite(STDERR, "Failed to write JSON to $outFile\n");
-        return;
-    }
-
-    echo "Stored " . count($results) . " trending repos to $outFile\n";
-}
 
 function install_pkg(string $ecosystem, string $name, ?string $version, array $ghHeaders, string $root): void {
     $pkg = get_package($ecosystem, $name, $ghHeaders);
@@ -713,8 +696,9 @@ function install_pkg(string $ecosystem, string $name, ?string $version, array $g
         return;
     }
 
+    global $GITHUB_HEADERS;
     $targetDir = ensure_pkg_dir($ecosystem, $name, $version, $root);
-    $fileName = basename(parse_url($url, PHP_URL_PATH) ?? '');
+    $fileName  = basename(parse_url($url, PHP_URL_PATH) ?? '');
     if ($fileName === '' || $fileName === '/') {
         $fileName = $pkg['name'] . '-' . $version . '.tgz';
     }
@@ -727,24 +711,39 @@ function install_pkg(string $ecosystem, string $name, ?string $version, array $g
         echo "  URL  : {$url}" . PHP_EOL;
         echo "  Dest : {$destPath}" . PHP_EOL;
 
-        $ch = curl_init($url);
-        $fh = fopen($destPath, 'w');
-        curl_setopt_array($ch, [
-            CURLOPT_FILE           => $fh,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_SSL_VERIFYPEER => true,
-            CURLOPT_HTTPHEADER     => (strtolower($ecosystem) === 'oss' ? $GLOBALS['GITHUB_HEADERS'] : []),
-        ]);
-        $ok = curl_exec($ch);
-        if ($ok === false) {
-            fwrite(STDERR, "Download failed: " . curl_error($ch) . PHP_EOL);
-            curl_close($ch);
-            fclose($fh);
-            @unlink($destPath);
+        $headers = [];
+        if (strtolower($ecosystem) === 'oss') {
+            $headers = $GITHUB_HEADERS;
+        }
+
+        $headerStr = '';
+        if (!empty($headers)) {
+            $headerStr = implode("\r\n", $headers);
+        }
+
+        $opts = [
+            'http' => [
+                'method'  => 'GET',
+                'header'  => $headerStr,
+                'timeout' => 60,
+            ],
+            'ssl' => [
+                'verify_peer'      => true,
+                'verify_peer_name' => true,
+            ],
+        ];
+        $context = stream_context_create($opts);
+        $file = @file_get_contents($url, false, $context);
+
+        if ($file === false) {
+            fwrite(STDERR, "Download failed for $url\n");
             return;
         }
-        curl_close($ch);
-        fclose($fh);
+
+        if (file_put_contents($destPath, $file) === false) {
+            fwrite(STDERR, "Failed to save file to $destPath\n");
+            return;
+        }
     }
 
     echo PHP_EOL;
@@ -768,87 +767,241 @@ function install_pkg(string $ecosystem, string $name, ?string $version, array $g
     }
 }
 
-///////////////////////////////////////
-// CLI dispatch
-///////////////////////////////////////
+//////////////////////
+// CLI vs Web dispatch
+//////////////////////
 
-if (
-    !$command ||
-    in_array($command, ['help', '-h', '--help', '/?'], true)
-) {
-    show_help();
+if (php_sapi_name() === 'cli') {
+    // ---------- CLI MODE ----------
+    global $GITHUB_HEADERS, $GITHUB_TOKEN, $META_ROOT;
+
+    $argv0 = $argv[0] ?? null;
+    array_shift($argv); // drop script name
+
+    $command   = $argv[0] ?? null;
+    $ecosystem = $argv[1] ?? null;
+    $name      = $argv[2] ?? null;
+    $version   = $argv[3] ?? null;
+    $arg1      = $argv[4] ?? null;
+    $arg2      = $argv[5] ?? null;
+
+    if (
+        !$command ||
+        in_array($command, ['help', '-h', '--help', '/?'], true)
+    ) {
+        show_help();
+        exit(0);
+    }
+
+    switch (strtolower($command)) {
+        case 'info':
+            if (!$ecosystem || !$name) {
+                fwrite(STDERR, "Usage: php meta-pkg.php info <ecosystem> <name>" . PHP_EOL);
+                show_help();
+                exit(1);
+            }
+            show_pkg_info($ecosystem, $name, $GITHUB_HEADERS);
+            break;
+
+        case 'deps':
+            if (!$ecosystem || !$name) {
+                fwrite(STDERR, "Usage: php meta-pkg.php deps <ecosystem> <name> [version]" . PHP_EOL);
+                show_help();
+                exit(1);
+            }
+            show_pkg_deps($ecosystem, $name, $version, $GITHUB_HEADERS);
+            break;
+
+        case 'install':
+            if (!$ecosystem || !$name) {
+                fwrite(STDERR, "Usage: php meta-pkg.php install <ecosystem> <name> [version]" . PHP_EOL);
+                show_help();
+                exit(1);
+            }
+            install_pkg($ecosystem, $name, $version, $GITHUB_HEADERS, $META_ROOT);
+            break;
+
+        case 'search':
+            if (strtolower($ecosystem) !== 'oss' || !$name) {
+                fwrite(STDERR, "Usage: php meta-pkg.php search oss \"<query>\"" . PHP_EOL);
+                show_help();
+                exit(1);
+            }
+            oss_search_repos($name, $GITHUB_HEADERS);
+            break;
+
+        case 'issue':
+            if (strtolower($ecosystem) !== 'oss' || !$name || !$version || !$arg1) {
+                fwrite(STDERR, "Usage: php meta-pkg.php issue oss <owner/repo> \"<title>\" \"<body>\"" . PHP_EOL);
+                show_help();
+                exit(1);
+            }
+            // here: $name = owner/repo, $version = title, $arg1 = body
+            oss_new_issue($name, $version, $arg1, $GITHUB_HEADERS, $GITHUB_TOKEN);
+            break;
+
+        case 'crawl':
+            // php meta-pkg.php crawl trending <output.json>
+            if (strtolower($ecosystem) === 'trending' && $name) {
+                crawl_github_trending($name);
+                break;
+            }
+
+            // php meta-pkg.php crawl tag <topic> <output.json> [maxResults]
+            if (strtolower($ecosystem) === 'tag' && $name && $version) {
+                $topic   = $name;
+                $outFile = $version;
+                $max     = $arg1 ? (int)$arg1 : 50;
+                crawl_github_by_topic($topic, $max, $outFile, $GITHUB_HEADERS);
+                break;
+            }
+
+            fwrite(STDERR, "Usage:\n");
+            fwrite(STDERR, "  php meta-pkg.php crawl trending <output.json>\n");
+            fwrite(STDERR, "  php meta-pkg.php crawl tag <topic> <output.json> [maxResults]\n");
+            break;
+
+        default:
+            fwrite(STDERR, "Unknown command '{$command}'" . PHP_EOL);
+            show_help();
+            exit(1);
+    }
+
     exit(0);
 }
 
-switch (strtolower($command)) {
-    case 'info':
-        if (!$ecosystem || !$name) {
-            fwrite(STDERR, "Usage: php meta-pkg.php info <ecosystem> <name>" . PHP_EOL);
-            show_help();
-            exit(1);
+// ---------- WEB GUI MODE ----------
+
+global $GITHUB_HEADERS, $META_ROOT;
+
+$action    = $_GET['action']    ?? '';
+$eco       = $_GET['ecosystem'] ?? '';
+$name      = $_GET['name']      ?? '';
+$version   = $_GET['version']   ?? '';
+$topic     = $_GET['topic']     ?? '';
+$query     = $_GET['query']     ?? '';
+$output    = null;
+$message   = '';
+
+if ($action === 'info' && $eco && $name) {
+    $output = get_package($eco, $name, $GITHUB_HEADERS);
+} elseif ($action === 'deps' && $eco && $name) {
+    $pkg = get_package($eco, $name, $GITHUB_HEADERS);
+    if ($pkg) {
+        if (!$version) {
+            $version = $pkg['latest_version'] ?? null;
         }
-        show_pkg_info($ecosystem, $name, $GITHUB_HEADERS);
-        break;
-
-    case 'deps':
-        if (!$ecosystem || !$name) {
-            fwrite(STDERR, "Usage: php meta-pkg.php deps <ecosystem> <name> [version]" . PHP_EOL);
-            show_help();
-            exit(1);
+        if ($version) {
+            $output = get_version_info($eco, $pkg, $version);
         }
-        show_pkg_deps($ecosystem, $name, $version, $GITHUB_HEADERS);
-        break;
-
-    case 'install':
-        if (!$ecosystem || !$name) {
-            fwrite(STDERR, "Usage: php meta-pkg.php install <ecosystem> <name> [version]" . PHP_EOL);
-            show_help();
-            exit(1);
-        }
-        install_pkg($ecosystem, $name, $version, $GITHUB_HEADERS, $META_ROOT);
-        break;
-
-    case 'search':
-        if (strtolower($ecosystem) !== 'oss' || !$arg1) {
-            fwrite(STDERR, "Usage: php meta-pkg.php search oss \"<query>\"" . PHP_EOL);
-            show_help();
-            exit(1);
-        }
-        oss_search_repos($arg1, $GITHUB_HEADERS);
-        break;
-    case 'crawl':
-        // Mode 1: php meta-pkg.php crawl trending <output.json>
-        if (strtolower($ecosystem) === 'trending' && $name) {
-            crawl_github_trending($name); // your previous function
-            break;
-        }
-
-        // Mode 2: php meta-pkg.php crawl tag <topic> <output.json> [maxResults]
-        if (strtolower($ecosystem) === 'tag' && $name && $version) {
-            $topic    = $name;     // 3rd arg
-            $outFile  = $version;  // 4th arg
-            $max      = $arg1 ? (int)$arg1 : 50; // optional 5th arg, default 50
-
-            crawl_github_by_topic($topic, $max, $outFile, $GITHUB_HEADERS);
-            break;
-        }
-
-        fwrite(STDERR, "Usage:\n");
-        fwrite(STDERR, "  php meta-pkg.php crawl trending <output.json>\n");
-        fwrite(STDERR, "  php meta-pkg.php crawl tag <topic> <output.json> [maxResults]\n");
-        break;
-
-    case 'issue':
-        if (strtolower($ecosystem) !== 'oss' || !$name || !$arg1 || !$arg2) {
-            fwrite(STDERR, "Usage: php meta-pkg.php issue oss <owner/repo> \"<title>\" \"<body>\"" . PHP_EOL);
-            show_help();
-            exit(1);
-        }
-        oss_new_issue($name, $arg1, $arg2, $GITHUB_HEADERS, $GITHUB_TOKEN);
-        break;
-
-    default:
-        fwrite(STDERR, "Unknown command '{$command}'" . PHP_EOL);
-        show_help();
-        exit(1);
+    }
+} elseif ($action === 'search_oss' && $query) {
+    // capture search results into buffer and show as text
+    ob_start();
+    oss_search_repos($query, $GITHUB_HEADERS);
+    $message = ob_get_clean();
+} elseif ($action === 'crawl_topic' && $topic) {
+    $tmp = sys_get_temp_dir() . '/crawl-' . preg_replace('/\W+/', '_', $topic) . '.json';
+    crawl_github_by_topic($topic, 20, $tmp, $GITHUB_HEADERS);
+    $json = @file_get_contents($tmp);
+    if ($json) {
+        $output = json_decode($json, true);
+    }
 }
+
+?>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MetaPkg GUI</title>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 20px; }
+    h1 { margin-top: 0; }
+    .section { border: 1px solid #ccc; padding: 12px 16px; border-radius: 10px; margin-bottom: 20px; }
+    label { display: block; margin-top: 6px; }
+    input[type=text] { width: 320px; padding: 4px; }
+    select { padding: 4px; }
+    button { margin-top: 8px; padding: 6px 10px; cursor: pointer; }
+    textarea { width: 100%; height: 260px; font-family: monospace; font-size: 12px; }
+    pre { background: #f7f7f7; padding: 10px; border-radius: 6px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>MetaPkg – Web UI</h1>
+  <p><strong>Hint:</strong> From CLI use: <code>php meta-pkg.php help</code></p>
+
+  <div class="section">
+    <h2>Package Info / Deps</h2>
+    <form method="get">
+      <label>
+        Action:
+        <select name="action">
+          <option value="info">Info</option>
+          <option value="deps">Dependencies</option>
+        </select>
+      </label>
+
+      <label>
+        Ecosystem:
+        <select name="ecosystem">
+          <option value="pypi" <?php if ($eco==='pypi') echo 'selected'; ?>>pypi</option>
+          <option value="composer" <?php if ($eco==='composer') echo 'selected'; ?>>composer</option>
+          <option value="oss" <?php if ($eco==='oss') echo 'selected'; ?>>oss (GitHub)</option>
+        </select>
+      </label>
+
+      <label>
+        Name (e.g. <code>requests</code>, <code>monolog/monolog</code>, <code>owner/repo</code>):
+        <input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>" required>
+      </label>
+
+      <label>
+        Version (optional; leave empty for latest):
+        <input type="text" name="version" value="<?php echo htmlspecialchars($version); ?>">
+      </label>
+
+      <button type="submit">Run</button>
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>Search OSS (GitHub)</h2>
+    <form method="get">
+      <input type="hidden" name="action" value="search_oss">
+      <label>
+        Query:
+        <input type="text" name="query" value="<?php echo htmlspecialchars($query); ?>" placeholder="json library, backup tool, etc.">
+      </label>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>Crawl GitHub by Topic (Tag)</h2>
+    <form method="get">
+      <input type="hidden" name="action" value="crawl_topic">
+      <label>
+        Topic (e.g. <code>backup</code>, <code>monitoring</code>, <code>cli</code>):
+        <input type="text" name="topic" value="<?php echo htmlspecialchars($topic); ?>" required>
+      </label>
+      <button type="submit">Crawl</button>
+    </form>
+  </div>
+
+  <?php if ($message): ?>
+    <div class="section">
+      <h2>Text Output</h2>
+      <pre><?php echo htmlspecialchars($message); ?></pre>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($output !== null): ?>
+    <div class="section">
+      <h2>Result JSON</h2>
+      <textarea readonly><?php echo htmlspecialchars(json_encode($output, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)); ?></textarea>
+    </div>
+  <?php endif; ?>
+
+</body>
+</html>
