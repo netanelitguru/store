@@ -1,0 +1,911 @@
+{
+    "source": "github_topic",
+    "topic": "julia",
+    "count": 50,
+    "results": [
+        {
+            "full_name": "JuliaLang/julia",
+            "html_url": "https://github.com/JuliaLang/julia",
+            "description": "The Julia Programming Language",
+            "language": "Julia",
+            "stars": 47986,
+            "topics": [
+                "hacktoberfest",
+                "hpc",
+                "julia",
+                "julia-language",
+                "julialang",
+                "machine-learning",
+                "numerical",
+                "programming-language",
+                "science",
+                "scientific"
+            ]
+        },
+        {
+            "full_name": "nteract/papermill",
+            "html_url": "https://github.com/nteract/papermill",
+            "description": "📚 Parameterize, execute, and analyze notebooks",
+            "language": "Python",
+            "stars": 6317,
+            "topics": [
+                "julia",
+                "jupyter",
+                "notebook",
+                "notebook-generator",
+                "notebooks",
+                "nteract",
+                "pipeline",
+                "publishing",
+                "python",
+                "r",
+                "scala"
+            ]
+        },
+        {
+            "full_name": "fonsp/Pluto.jl",
+            "html_url": "https://github.com/fonsp/Pluto.jl",
+            "description": "🎈 Simple reactive notebooks for Julia",
+            "language": "Julia",
+            "stars": 5255,
+            "topics": [
+                "designed-for-teachers",
+                "education",
+                "exploration",
+                "interactive",
+                "julia",
+                "notebook",
+                "pluto-notebooks",
+                "reactive",
+                "visualization"
+            ]
+        },
+        {
+            "full_name": "MilesCranmer/PySR",
+            "html_url": "https://github.com/MilesCranmer/PySR",
+            "description": "High-Performance Symbolic Regression in Python and Julia",
+            "language": "Python",
+            "stars": 3212,
+            "topics": [
+                "algorithm",
+                "automl",
+                "data-science",
+                "distributed-systems",
+                "equation-discovery",
+                "evolutionary-algorithms",
+                "explainable-ai",
+                "genetic-algorithm",
+                "interpretable-ml",
+                "julia",
+                "machine-learning",
+                "python",
+                "scikit-learn",
+                "symbolic",
+                "symbolic-regression"
+            ]
+        },
+        {
+            "full_name": "SciML/DifferentialEquations.jl",
+            "html_url": "https://github.com/SciML/DifferentialEquations.jl",
+            "description": "Multi-language suite for high-performance solvers of differential equations and scientific machine learning (SciML) components. Ordinary differential equations (ODEs), stochastic differential equations (SDEs), delay differential equations (DDEs), differential-algebraic equations (DAEs), and more in Julia.",
+            "language": "Julia",
+            "stars": 3034,
+            "topics": [
+                "dae",
+                "dde",
+                "delay-differential-equations",
+                "differential-algebraic-equations",
+                "differential-equations",
+                "differentialequations",
+                "dynamical-systems",
+                "julia",
+                "neural-differential-equations",
+                "numerical",
+                "ode",
+                "python",
+                "r",
+                "scientific",
+                "scientific-machine-learning",
+                "sciml",
+                "sde",
+                "spde",
+                "stochastic-differential-equations",
+                "stochastic-processes"
+            ]
+        },
+        {
+            "full_name": "multiprocessio/datastation",
+            "html_url": "https://github.com/multiprocessio/datastation",
+            "description": "App to easily query, script, and visualize data from every database, file, and API.",
+            "language": "TypeScript",
+            "stars": 2948,
+            "topics": [
+                "apache2",
+                "cockroachdb",
+                "data-analysis",
+                "data-visualization",
+                "database",
+                "julia",
+                "log-analysis",
+                "mariadb",
+                "mysql",
+                "nginx",
+                "nodejs",
+                "postgresql",
+                "python",
+                "rstats",
+                "ruby",
+                "sql",
+                "sql-editor",
+                "sql-server",
+                "sqlite3",
+                "syslog"
+            ]
+        },
+        {
+            "full_name": "grame-cncm/faust",
+            "html_url": "https://github.com/grame-cncm/faust",
+            "description": "Functional programming language for signal processing and sound synthesis",
+            "language": "C++",
+            "stars": 2886,
+            "topics": [
+                "audio",
+                "c",
+                "c-plus-plus",
+                "cmajor",
+                "compiler",
+                "cpp",
+                "csharp",
+                "dlang",
+                "dsp",
+                "faust",
+                "functional-programming",
+                "jax",
+                "jsfx",
+                "julia",
+                "julia-language",
+                "llvm",
+                "rnbo",
+                "rust",
+                "wasm"
+            ]
+        },
+        {
+            "full_name": "MakieOrg/Makie.jl",
+            "html_url": "https://github.com/MakieOrg/Makie.jl",
+            "description": "Interactive data visualizations and plotting in Julia",
+            "language": "Julia",
+            "stars": 2660,
+            "topics": [
+                "gpu",
+                "graphics",
+                "julia",
+                "julia-language",
+                "plotting",
+                "visualization"
+            ]
+        },
+        {
+            "full_name": "szcf-weiya/ESL-CN",
+            "html_url": "https://github.com/szcf-weiya/ESL-CN",
+            "description": "The Elements of Statistical Learning (ESL)的中文翻译、代码实现及其习题解答。",
+            "language": "Jupyter Notebook",
+            "stars": 2646,
+            "topics": [
+                "cpp",
+                "esl",
+                "esl-cn",
+                "julia",
+                "python",
+                "r",
+                "statistical-learning"
+            ]
+        },
+        {
+            "full_name": "jump-dev/JuMP.jl",
+            "html_url": "https://github.com/jump-dev/JuMP.jl",
+            "description": "Modeling language for Mathematical Optimization (linear, mixed-integer, conic, semidefinite, nonlinear)",
+            "language": "Julia",
+            "stars": 2367,
+            "topics": [
+                "conic-programs",
+                "julia",
+                "linear-programming",
+                "mathematical-modelling",
+                "mathematical-programming",
+                "mixed-integer-programming",
+                "modeling-language",
+                "nonlinear-programming",
+                "optimization",
+                "semidefinite-programming"
+            ]
+        },
+        {
+            "full_name": "GenieFramework/Genie.jl",
+            "html_url": "https://github.com/GenieFramework/Genie.jl",
+            "description": "🧞The highly productive Julia web framework",
+            "language": "Julia",
+            "stars": 2364,
+            "topics": [
+                "framework",
+                "full-stack",
+                "julia",
+                "low-code",
+                "mvc",
+                "orm",
+                "reactive",
+                "vuejs",
+                "web",
+                "webframework"
+            ]
+        },
+        {
+            "full_name": "JuliaPlots/Plots.jl",
+            "html_url": "https://github.com/JuliaPlots/Plots.jl",
+            "description": "Powerful convenience for Julia visualizations and data analysis",
+            "language": "Julia",
+            "stars": 1921,
+            "topics": [
+                "hacktoberfest",
+                "julia",
+                "julia-language",
+                "plotting",
+                "visualization"
+            ]
+        },
+        {
+            "full_name": "GiovineItalia/Gadfly.jl",
+            "html_url": "https://github.com/GiovineItalia/Gadfly.jl",
+            "description": "Crafty statistical graphics for Julia.",
+            "language": "Julia",
+            "stars": 1920,
+            "topics": [
+                "gadfly",
+                "ggplot2",
+                "graphics",
+                "hacktoberfest",
+                "julia",
+                "plotting"
+            ]
+        },
+        {
+            "full_name": "JuliaAI/MLJ.jl",
+            "html_url": "https://github.com/JuliaAI/MLJ.jl",
+            "description": "A Julia machine learning framework",
+            "language": "Julia",
+            "stars": 1880,
+            "topics": [
+                "classification",
+                "clustering",
+                "data-science",
+                "ensemble-learning",
+                "julia",
+                "machine-learning",
+                "pipeline",
+                "pipelines",
+                "predictive-modeling",
+                "regression",
+                "stacking",
+                "statistics",
+                "tuning",
+                "tuning-parameters"
+            ]
+        },
+        {
+            "full_name": "JuliaData/DataFrames.jl",
+            "html_url": "https://github.com/JuliaData/DataFrames.jl",
+            "description": "In-memory tabular data in Julia",
+            "language": "Julia",
+            "stars": 1800,
+            "topics": [
+                "data",
+                "data-frame",
+                "dataframes",
+                "datasets",
+                "hacktoberfest",
+                "julia",
+                "tabular-data"
+            ]
+        },
+        {
+            "full_name": "cormullion/juliamono",
+            "html_url": "https://github.com/cormullion/juliamono",
+            "description": "repository for JuliaMono, a monospaced font with reasonable Unicode support.",
+            "language": "CSS",
+            "stars": 1578,
+            "topics": [
+                "font",
+                "fonts",
+                "franklin",
+                "julia",
+                "julialang",
+                "typography"
+            ]
+        },
+        {
+            "full_name": "SciML/ModelingToolkit.jl",
+            "html_url": "https://github.com/SciML/ModelingToolkit.jl",
+            "description": "An acausal modeling framework for automatically parallelized scientific machine learning (SciML) in Julia. A computer algebra system for integrated symbolics for physics-informed machine learning and automated transformations of differential equations",
+            "language": "Julia",
+            "stars": 1570,
+            "topics": [
+                "acausal",
+                "computer-algebra",
+                "dae",
+                "dde",
+                "delay-differential-equations",
+                "differential-equations",
+                "equation-based",
+                "julia",
+                "nonlinear-programming",
+                "ode",
+                "optimization",
+                "ordinary-differential-equations",
+                "pde",
+                "scientific-machine-learning",
+                "sciml",
+                "sde",
+                "stochastic-differential-equations",
+                "symbolic",
+                "symbolic-computation",
+                "symbolic-numerics"
+            ]
+        },
+        {
+            "full_name": "FluxML/Zygote.jl",
+            "html_url": "https://github.com/FluxML/Zygote.jl",
+            "description": "21st century AD",
+            "language": "Julia",
+            "stars": 1555,
+            "topics": [
+                "automatic-differentiation",
+                "control-flow",
+                "gradient",
+                "julia",
+                "julia-compiler",
+                "machine-learning"
+            ]
+        },
+        {
+            "full_name": "JuliaLang/PackageCompiler.jl",
+            "html_url": "https://github.com/JuliaLang/PackageCompiler.jl",
+            "description": "Compile your Julia Package",
+            "language": "Julia",
+            "stars": 1516,
+            "topics": [
+                "julia",
+                "packagecompiler"
+            ]
+        },
+        {
+            "full_name": "svaksha/Julia.jl",
+            "html_url": "https://github.com/svaksha/Julia.jl",
+            "description": "Curated decibans of Julia programming language.",
+            "language": "Julia",
+            "stars": 1501,
+            "topics": [
+                "agplv3",
+                "awesome-list",
+                "awesome-lists",
+                "collection",
+                "computer-science",
+                "julia",
+                "julia-language",
+                "julialang",
+                "programming",
+                "programming-language",
+                "resources",
+                "scientific-computing"
+            ]
+        },
+        {
+            "full_name": "JuliaPy/PyCall.jl",
+            "html_url": "https://github.com/JuliaPy/PyCall.jl",
+            "description": "Package to call Python functions from the Julia language",
+            "language": "Julia",
+            "stars": 1497,
+            "topics": [
+                "interoperability",
+                "julia",
+                "numpy",
+                "python"
+            ]
+        },
+        {
+            "full_name": "JuliaPlots/UnicodePlots.jl",
+            "html_url": "https://github.com/JuliaPlots/UnicodePlots.jl",
+            "description": "Unicode-based scientific plotting for working in the terminal",
+            "language": "Julia",
+            "stars": 1496,
+            "topics": [
+                "julia",
+                "plots",
+                "plotting",
+                "repl",
+                "terminal",
+                "unicode"
+            ]
+        },
+        {
+            "full_name": "denizyuret/Knet.jl",
+            "html_url": "https://github.com/denizyuret/Knet.jl",
+            "description": "Koç University deep learning framework.",
+            "language": "Jupyter Notebook",
+            "stars": 1436,
+            "topics": [
+                "data-science",
+                "deep-learning",
+                "julia",
+                "knet",
+                "machine-learning",
+                "neural-networks"
+            ]
+        },
+        {
+            "full_name": "mossr/BeautifulAlgorithms.jl",
+            "html_url": "https://github.com/mossr/BeautifulAlgorithms.jl",
+            "description": "Concise and beautiful algorithms written in Julia",
+            "language": "Julia",
+            "stars": 1407,
+            "topics": [
+                "algorithms",
+                "decision-making-under-uncertainty",
+                "julia",
+                "machine-learning",
+                "neural-network",
+                "optimization",
+                "quine",
+                "regression",
+                "reinforcement-learning",
+                "sorting"
+            ]
+        },
+        {
+            "full_name": "JuliaGPU/CUDA.jl",
+            "html_url": "https://github.com/JuliaGPU/CUDA.jl",
+            "description": "CUDA programming in Julia.",
+            "language": "Julia",
+            "stars": 1352,
+            "topics": [
+                "cuda",
+                "gpu",
+                "hacktoberfest",
+                "julia"
+            ]
+        },
+        {
+            "full_name": "JuliaAcademy/JuliaTutorials",
+            "html_url": "https://github.com/JuliaAcademy/JuliaTutorials",
+            "description": "Learn Julia via interactive tutorials!",
+            "language": "Jupyter Notebook",
+            "stars": 1337,
+            "topics": [
+                "julia",
+                "juliabox",
+                "learn-julia",
+                "learn-to-code",
+                "tutorial"
+            ]
+        },
+        {
+            "full_name": "julia-vscode/julia-vscode",
+            "html_url": "https://github.com/julia-vscode/julia-vscode",
+            "description": "Julia extension for Visual Studio Code",
+            "language": "TypeScript",
+            "stars": 1331,
+            "topics": [
+                "ide",
+                "integrated-development-environment",
+                "julia",
+                "julia-language",
+                "julialang",
+                "vscode"
+            ]
+        },
+        {
+            "full_name": "jonathan-laurent/AlphaZero.jl",
+            "html_url": "https://github.com/jonathan-laurent/AlphaZero.jl",
+            "description": "A generic, simple and fast implementation of Deepmind's AlphaZero algorithm.",
+            "language": "Julia",
+            "stars": 1303,
+            "topics": [
+                "alphazero",
+                "deep-learning",
+                "julia",
+                "machine-learning"
+            ]
+        },
+        {
+            "full_name": "pptacher/probabilistic_robotics",
+            "html_url": "https://github.com/pptacher/probabilistic_robotics",
+            "description": "solution of exercises of the book \"probabilistic robotics\"",
+            "language": "C++",
+            "stars": 1298,
+            "topics": [
+                "armadillo-library",
+                "autonomous-vehicles",
+                "bayesian-inference",
+                "cpp",
+                "fastslam",
+                "google-cloud-platform",
+                "intel-mkl-library",
+                "julia",
+                "kalman-filter",
+                "lapack",
+                "matlab",
+                "navigation",
+                "numpy",
+                "particle-filter",
+                "probabilistic-robotics",
+                "robotics",
+                "seif",
+                "slam",
+                "textbook-solutions",
+                "victoria-park-dataset"
+            ]
+        },
+        {
+            "full_name": "sagemathinc/cocalc",
+            "html_url": "https://github.com/sagemathinc/cocalc",
+            "description": "CoCalc: Collaborative Calculation in the Cloud",
+            "language": "TypeScript",
+            "stars": 1255,
+            "topics": [
+                "cloud",
+                "coffeescript",
+                "gap",
+                "julia",
+                "jupyter",
+                "jupyter-notebook",
+                "latex",
+                "markdown",
+                "mathematics",
+                "mathjax",
+                "nodejs",
+                "octave",
+                "pari",
+                "postgresql",
+                "python",
+                "r",
+                "sagemath",
+                "terminal"
+            ]
+        },
+        {
+            "full_name": "CliMA/Oceananigans.jl",
+            "html_url": "https://github.com/CliMA/Oceananigans.jl",
+            "description": "🌊  Julia software for fast, friendly, flexible, ocean-flavored fluid dynamics on CPUs and GPUs",
+            "language": "Julia",
+            "stars": 1208,
+            "topics": [
+                "climate",
+                "climate-change",
+                "data-assimilation",
+                "fluid-dynamics",
+                "gpu",
+                "julia",
+                "machine-learning",
+                "ocean"
+            ]
+        },
+        {
+            "full_name": "JuliaNLSolvers/Optim.jl",
+            "html_url": "https://github.com/JuliaNLSolvers/Optim.jl",
+            "description": "Optimization functions for Julia",
+            "language": "Julia",
+            "stars": 1178,
+            "topics": [
+                "julia",
+                "optim",
+                "optimisation",
+                "optimization",
+                "unconstrained-optimisation",
+                "unconstrained-optimization"
+            ]
+        },
+        {
+            "full_name": "JuliaStats/Distributions.jl",
+            "html_url": "https://github.com/JuliaStats/Distributions.jl",
+            "description": "A Julia package for probability distributions and associated functions.",
+            "language": "Julia",
+            "stars": 1175,
+            "topics": [
+                "data-science",
+                "julia",
+                "probability-distributions",
+                "statistics"
+            ]
+        },
+        {
+            "full_name": "h-Klok/StatsWithJuliaBook",
+            "html_url": "https://github.com/h-Klok/StatsWithJuliaBook",
+            "description": "",
+            "language": "Julia",
+            "stars": 1094,
+            "topics": [
+                "julia",
+                "julia-language",
+                "machine-learning",
+                "statistics"
+            ]
+        },
+        {
+            "full_name": "py2many/py2many",
+            "html_url": "https://github.com/py2many/py2many",
+            "description": "Transpiler of Python to many other languages",
+            "language": "Python",
+            "stars": 1061,
+            "topics": [
+                "ast",
+                "dart",
+                "dlang",
+                "golang",
+                "julia",
+                "kotlin",
+                "mojo",
+                "nim",
+                "python",
+                "rust",
+                "smt",
+                "transpiler",
+                "vlang",
+                "ziglang"
+            ]
+        },
+        {
+            "full_name": "JuliaPy/PythonCall.jl",
+            "html_url": "https://github.com/JuliaPy/PythonCall.jl",
+            "description": "Python and Julia in harmony.",
+            "language": "Julia",
+            "stars": 1000,
+            "topics": [
+                "ffi",
+                "interoperability",
+                "julia",
+                "python"
+            ]
+        },
+        {
+            "full_name": "JuliaDiff/ForwardDiff.jl",
+            "html_url": "https://github.com/JuliaDiff/ForwardDiff.jl",
+            "description": "Forward Mode Automatic Differentiation for Julia",
+            "language": "Julia",
+            "stars": 966,
+            "topics": [
+                "automatic-differentiation",
+                "calculus",
+                "julia"
+            ]
+        },
+        {
+            "full_name": "vladimirvivien/go-cshared-examples",
+            "html_url": "https://github.com/vladimirvivien/go-cshared-examples",
+            "description": "Calling Go Functions from Other Languages using C Shared Libraries",
+            "language": "Dart",
+            "stars": 943,
+            "topics": [
+                "dartlang",
+                "dynamic-library",
+                "ffi",
+                "go",
+                "golang",
+                "java",
+                "jna",
+                "julia",
+                "lua",
+                "nodejs",
+                "python",
+                "ruby",
+                "shared-libraries"
+            ]
+        },
+        {
+            "full_name": "FluxML/model-zoo",
+            "html_url": "https://github.com/FluxML/model-zoo",
+            "description": "Please do not feed the models",
+            "language": "Julia",
+            "stars": 935,
+            "topics": [
+                "deep-learning",
+                "flux",
+                "julia",
+                "machine-learning",
+                "model-zoo"
+            ]
+        },
+        {
+            "full_name": "drujensen/fib",
+            "html_url": "https://github.com/drujensen/fib",
+            "description": "Performance Benchmark of top Github languages",
+            "language": "Ruby",
+            "stars": 906,
+            "topics": [
+                "clang",
+                "cpp",
+                "crystal",
+                "csharp",
+                "dart",
+                "elixir",
+                "fibonacci-benchmark",
+                "go",
+                "java-8",
+                "javascript",
+                "julia",
+                "node",
+                "perl",
+                "php",
+                "python",
+                "python3",
+                "r",
+                "ruby",
+                "rust",
+                "swift"
+            ]
+        },
+        {
+            "full_name": "JuliaDocs/Documenter.jl",
+            "html_url": "https://github.com/JuliaDocs/Documenter.jl",
+            "description": "A documentation generator for Julia.",
+            "language": "Julia",
+            "stars": 887,
+            "topics": [
+                "documentation-generator",
+                "documentation-tool",
+                "julia"
+            ]
+        },
+        {
+            "full_name": "joshday/OnlineStats.jl",
+            "html_url": "https://github.com/joshday/OnlineStats.jl",
+            "description": "⚡ Single-pass algorithms for statistics",
+            "language": "Julia",
+            "stars": 887,
+            "topics": [
+                "big-data",
+                "julia",
+                "julia-language",
+                "julialang",
+                "online-algorithms",
+                "onlinestats",
+                "statistics",
+                "stochastic-approximation",
+                "streaming-data"
+            ]
+        },
+        {
+            "full_name": "malmaud/TensorFlow.jl",
+            "html_url": "https://github.com/malmaud/TensorFlow.jl",
+            "description": "A Julia wrapper for TensorFlow",
+            "language": "Julia",
+            "stars": 882,
+            "topics": [
+                "gpu",
+                "julia",
+                "machine-learning",
+                "tensorflow",
+                "wrapper"
+            ]
+        },
+        {
+            "full_name": "JuliaDynamics/Agents.jl",
+            "html_url": "https://github.com/JuliaDynamics/Agents.jl",
+            "description": "Agent-based modeling framework in Julia",
+            "language": "Julia",
+            "stars": 856,
+            "topics": [
+                "abm",
+                "agent-based-framework",
+                "agent-based-modeling",
+                "agent-based-simulation",
+                "agents",
+                "cellular-automata",
+                "complex-systems",
+                "hacktoberfest",
+                "heterogeneous-agent-model",
+                "individual-based-modelling",
+                "julia",
+                "julialang",
+                "simulation",
+                "simulation-framework"
+            ]
+        },
+        {
+            "full_name": "JunoLab/Weave.jl",
+            "html_url": "https://github.com/JunoLab/Weave.jl",
+            "description": "Scientific reports/literate programming for Julia",
+            "language": "Julia",
+            "stars": 848,
+            "topics": [
+                "julia",
+                "literate-programming",
+                "reproducible-research",
+                "scientific-reports",
+                "scientific-workflows"
+            ]
+        },
+        {
+            "full_name": "JuliaAnimators/Javis.jl",
+            "html_url": "https://github.com/JuliaAnimators/Javis.jl",
+            "description": "Julia Animations and Visualizations",
+            "language": "Julia",
+            "stars": 845,
+            "topics": [
+                "animation",
+                "animations",
+                "hacktoberfest",
+                "julia"
+            ]
+        },
+        {
+            "full_name": "aviatesk/JET.jl",
+            "html_url": "https://github.com/aviatesk/JET.jl",
+            "description": "An experimental code analyzer for Julia. No need for additional type annotations.",
+            "language": "Julia",
+            "stars": 828,
+            "topics": [
+                "error-detection",
+                "julia",
+                "performance-engineering",
+                "static-analysis"
+            ]
+        },
+        {
+            "full_name": "gridap/Gridap.jl",
+            "html_url": "https://github.com/gridap/Gridap.jl",
+            "description": "Grid-based approximation of partial differential equations in Julia",
+            "language": "Julia",
+            "stars": 822,
+            "topics": [
+                "finite-elements",
+                "gridap",
+                "julia",
+                "numerical-methods",
+                "partial-differential-equations",
+                "pdes"
+            ]
+        },
+        {
+            "full_name": "SciML/Optimization.jl",
+            "html_url": "https://github.com/SciML/Optimization.jl",
+            "description": "Mathematical Optimization in Julia. Local, global, gradient-based and derivative-free. Linear, Quadratic, Convex, Mixed-Integer, and Nonlinear Optimization in one simple, fast, and differentiable interface.",
+            "language": "Julia",
+            "stars": 809,
+            "topics": [
+                "algorithmic-differentiation",
+                "automatic-differentiation",
+                "convex-optimization",
+                "derivative-free-optimization",
+                "global-optimization",
+                "hacktoberfest",
+                "julia",
+                "local-optimization",
+                "mixed-integer-programming",
+                "nonlinear-optimization",
+                "optimization",
+                "scientific-machine-learning",
+                "sciml"
+            ]
+        },
+        {
+            "full_name": "chrisvoncsefalvay/learn-julia-the-hard-way",
+            "html_url": "https://github.com/chrisvoncsefalvay/learn-julia-the-hard-way",
+            "description": "Learn Julia the hard way!",
+            "language": "Makefile",
+            "stars": 784,
+            "topics": [
+                "data-science",
+                "hpc",
+                "julia",
+                "julia-language",
+                "julialang",
+                "language",
+                "learning",
+                "learning-by-doing",
+                "learning-julia",
+                "scientific-computing",
+                "statistics",
+                "technical-computing"
+            ]
+        }
+    ]
+}
