@@ -1,0 +1,1756 @@
+{
+    "source": "github_topic",
+    "topic": "xdr",
+    "count": 100,
+    "results": [
+        {
+            "full_name": "waydabber/BetterDisplay",
+            "html_url": "https://github.com/waydabber/BetterDisplay",
+            "description": "Unlock your displays on your Mac! Flexible HiDPI scaling, XDR/HDR extra brightness, virtual screens, DDC control, extra dimming, PIP/streaming, EDID override and lots more!",
+            "language": "",
+            "stars": 28127,
+            "topics": [
+                "4k",
+                "brightness",
+                "ddc",
+                "display",
+                "edid",
+                "flexible",
+                "hdmi",
+                "hidpi",
+                "mac",
+                "macos",
+                "override",
+                "resolution",
+                "retina",
+                "scaling",
+                "screen",
+                "virtual",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "wazuh/wazuh",
+            "html_url": "https://github.com/wazuh/wazuh",
+            "description": "Wazuh - The Open Source Security Platform. Unified XDR and SIEM protection for endpoints and cloud workloads.",
+            "language": "C",
+            "stars": 13995,
+            "topics": [
+                "cloud-security",
+                "compliance",
+                "configuration-assessement",
+                "container-security",
+                "cybersecurity",
+                "file-integrity-monitoring",
+                "incident-response",
+                "infosec",
+                "log-analysis",
+                "malware-detection",
+                "pci-dss",
+                "security",
+                "security-audit",
+                "security-automation",
+                "security-hardening",
+                "security-tools",
+                "siem",
+                "vulnerability-detection",
+                "wazuh",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "alin23/Lunar",
+            "html_url": "https://github.com/alin23/Lunar",
+            "description": "Intelligent adaptive brightness for your external monitors",
+            "language": "Swift",
+            "stars": 5338,
+            "topics": [
+                "adaptive-brightness",
+                "brightness",
+                "brightness-control",
+                "contrast",
+                "ddc",
+                "ddc-ci",
+                "display",
+                "macbook",
+                "macos",
+                "monitor",
+                "swift",
+                "swiftui",
+                "volume-control",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "LearningKijo/KQL",
+            "html_url": "https://github.com/LearningKijo/KQL",
+            "description": "Threat Hunting query in Microsoft 365 Defender, XDR. Provide out-of-the-box KQL hunting queries - App, Email, Identity and Endpoint.",
+            "language": "",
+            "stars": 483,
+            "topics": [
+                "edr",
+                "incident-response",
+                "kql",
+                "kusto",
+                "threat-hunting",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "niklasr22/BrightIntosh",
+            "html_url": "https://github.com/niklasr22/BrightIntosh",
+            "description": "Unlock the full brightness of the XDR display of your MacBook Pro",
+            "language": "Swift",
+            "stars": 440,
+            "topics": [
+                "apple",
+                "bright",
+                "brightness",
+                "brightness-control",
+                "display",
+                "edr",
+                "hdr",
+                "mac",
+                "macbook",
+                "macbook-pro",
+                "macos",
+                "nits",
+                "swift",
+                "swiftui",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "englercj/resource-loader",
+            "html_url": "https://github.com/englercj/resource-loader",
+            "description": "A middleware-style generic resource loader built with web games in mind.",
+            "language": "JavaScript",
+            "stars": 431,
+            "topics": [
+                "ajax",
+                "javascript",
+                "resource-loader",
+                "xdr",
+                "xhr"
+            ]
+        },
+        {
+            "full_name": "starkdmi/BrightXDR",
+            "html_url": "https://github.com/starkdmi/BrightXDR",
+            "description": "Free and Open Source alternative to Vivid macOS application to extend Apple XDR display brightness from 500 up to 1600 nits. ",
+            "language": "Swift",
+            "stars": 179,
+            "topics": [
+                "apple",
+                "brightness",
+                "display",
+                "edr",
+                "hdr",
+                "lunar",
+                "macbook-pro",
+                "macos",
+                "swift",
+                "swiftui",
+                "vivid",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "z1pti3/jimi",
+            "html_url": "https://github.com/z1pti3/jimi",
+            "description": "Jimi is an automation first no-code platform designed and developed originally for Security Orchestration and Response. Since its launch jimi has developed into a fully fledged IT automation platform which effortlessly integrates with your existing tools unlocking the potential for autonomous IT and Security operations.",
+            "language": "Python",
+            "stars": 166,
+            "topics": [
+                "asset-management",
+                "automation",
+                "it-automation",
+                "jimi",
+                "monitoring",
+                "no-code",
+                "orchestration",
+                "secops",
+                "security",
+                "soar",
+                "workflow-automation",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "UncoderIO/Uncoder_IO",
+            "html_url": "https://github.com/UncoderIO/Uncoder_IO",
+            "description": "An IDE and translation engine for detection engineers and threat hunters. Be faster, write smarter, keep 100% privacy.",
+            "language": "Python",
+            "stars": 165,
+            "topics": [
+                "datalake",
+                "edr",
+                "roota",
+                "siem",
+                "sigma",
+                "threathunting",
+                "translation",
+                "uncoder",
+                "uncoderio",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "securityjoes/ForensicMiner",
+            "html_url": "https://github.com/securityjoes/ForensicMiner",
+            "description": "A really good DFIR automation for collecting and analyzing evidence designed for cybersecurity professionals.",
+            "language": "PowerShell",
+            "stars": 159,
+            "topics": [
+                "automation",
+                "cortex",
+                "crowdstrike",
+                "cyber",
+                "dfir",
+                "edr",
+                "fast",
+                "forensics",
+                "ir",
+                "mdr",
+                "powershell",
+                "security",
+                "soc",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "bgenev/impulse-xdr",
+            "html_url": "https://github.com/bgenev/impulse-xdr",
+            "description": "Fully automated host & network intrusion detection platform. Detects malware from behavioural patterns rather than signatures and enables deeper visibility than legacy tools.",
+            "language": "Python",
+            "stars": 138,
+            "topics": [
+                "cloud",
+                "cybersecurity",
+                "devops",
+                "monitoring",
+                "osquery",
+                "security",
+                "security-tools",
+                "server-security",
+                "siem",
+                "suricata",
+                "visibility",
+                "vpc",
+                "vpc-endpoints",
+                "vps",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "UncoderIO/Roota",
+            "html_url": "https://github.com/UncoderIO/Roota",
+            "description": "Roota is a public-domain language of threat detection and response that combines native queries from a SIEM, EDR, XDR, or Data Lake with standardized metadata and threat intelligence to enable automated translation into other languages",
+            "language": "",
+            "stars": 132,
+            "topics": [
+                "datalake",
+                "edr",
+                "roota",
+                "rootalanguage",
+                "siem",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "lawndoc/AdvancedHuntingQueries",
+            "html_url": "https://github.com/lawndoc/AdvancedHuntingQueries",
+            "description": "Microsoft 365 Advanced Hunting Queries with hotlinks that plug the query right into your tenant.",
+            "language": "",
+            "stars": 129,
+            "topics": [
+                "cyber-security",
+                "cybersecurity",
+                "defender",
+                "defender-atp",
+                "defender-for-endpoint",
+                "detection",
+                "detection-engineering",
+                "hunting",
+                "kql",
+                "kusto",
+                "microsoft",
+                "microsoft365",
+                "security",
+                "threat-hunting",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "brosck/Condor",
+            "html_url": "https://github.com/brosck/Condor",
+            "description": "「🛡️」AVs/EDRs Evasion tool",
+            "language": "Python",
+            "stars": 105,
+            "topics": [
+                "antivirus",
+                "antivirus-evasion",
+                "av",
+                "bypass",
+                "defender",
+                "edr",
+                "evasion",
+                "hacking",
+                "injection",
+                "loader",
+                "protection",
+                "python",
+                "security",
+                "shellcode",
+                "windows",
+                "windows-defender",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "tarsal-oss/kflowd",
+            "html_url": "https://github.com/tarsal-oss/kflowd",
+            "description": "Kernel-based Process Monitoring on Linux Endpoints for File System, TCP and UDP Networking Events and optionally DNS, HTTP and SYSLOG Application Messages via eBPF Subsystem",
+            "language": "C",
+            "stars": 70,
+            "topics": [
+                "co-re",
+                "detection",
+                "dlp",
+                "dns",
+                "dpi",
+                "ebpf",
+                "edr",
+                "filesystem",
+                "http",
+                "monitoring",
+                "netflow",
+                "siem",
+                "syslog",
+                "tcp",
+                "udp",
+                "virus",
+                "vulnerability",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "NoobishSVK/fm-dx-webserver",
+            "html_url": "https://github.com/NoobishSVK/fm-dx-webserver",
+            "description": "FM-DX Webserver is a cross-platform web server designed for FM DXers who want to control their radio receivers through a web interface.",
+            "language": "JavaScript",
+            "stars": 66,
+            "topics": [
+                "airspy",
+                "fm",
+                "fm-dx-webserver",
+                "rtl-sdr",
+                "sdr",
+                "tef6686",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "dCache/oncrpc4j",
+            "html_url": "https://github.com/dCache/oncrpc4j",
+            "description": "Pure Java implementation of ONCRPC/SUNRPC",
+            "language": "Java",
+            "stars": 31,
+            "topics": [
+                "java",
+                "nio",
+                "oncrpc",
+                "rpc",
+                "rpc-client",
+                "rpc-framework",
+                "sunrpc",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "benbrittain/rust-xdr",
+            "html_url": "https://github.com/benbrittain/rust-xdr",
+            "description": "Generate Rust services from XDR RPC",
+            "language": "Rust",
+            "stars": 29,
+            "topics": [
+                "codegen",
+                "rust",
+                "rust-services",
+                "rust-xdr",
+                "serialization",
+                "xdr",
+                "xdr-rpc"
+            ]
+        },
+        {
+            "full_name": "alexverboon/DefenderResourceHub",
+            "html_url": "https://github.com/alexverboon/DefenderResourceHub",
+            "description": "Defender Resource Hub",
+            "language": "PowerShell",
+            "stars": 29,
+            "topics": [
+                "defender",
+                "edr",
+                "kql",
+                "mdci",
+                "mde",
+                "mdi",
+                "mdo",
+                "sentinel",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "ebarti/cortex-xdr-client",
+            "html_url": "https://github.com/ebarti/cortex-xdr-client",
+            "description": "A python-based API client for Cortex XDR API.",
+            "language": "Python",
+            "stars": 26,
+            "topics": [
+                "api",
+                "client",
+                "cortex",
+                "cortex-xdr",
+                "paloaltonetworks",
+                "python",
+                "security",
+                "xdr",
+                "xql"
+            ]
+        },
+        {
+            "full_name": "xdrpp/stc",
+            "html_url": "https://github.com/xdrpp/stc",
+            "description": "Stellar transaction compiler",
+            "language": "Go",
+            "stars": 24,
+            "topics": [
+                "go",
+                "rfc4506",
+                "stellar",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "securityjoes/Crowdstrike-Deploy",
+            "html_url": "https://github.com/securityjoes/Crowdstrike-Deploy",
+            "description": "The ultimate repository for remotely deploying Crowdstrike sensors quickly and discreetly on any other EDR platform.",
+            "language": "Shell",
+            "stars": 24,
+            "topics": [
+                "automation",
+                "crowdstrike",
+                "cyber",
+                "dfir",
+                "edr",
+                "forensic",
+                "incident-response",
+                "powershell",
+                "security",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "k4nfr3/XDR_scripts",
+            "html_url": "https://github.com/k4nfr3/XDR_scripts",
+            "description": "A few XDR Scripts",
+            "language": "Python",
+            "stars": 22,
+            "topics": [
+                "bioc",
+                "cortex",
+                "xdr",
+                "xql"
+            ]
+        },
+        {
+            "full_name": "prashanthpai/sunrpc",
+            "html_url": "https://github.com/prashanthpai/sunrpc",
+            "description": "ONC RPC (Sun RPC) implementation in Go lang",
+            "language": "Go",
+            "stars": 20,
+            "topics": [
+                "codec",
+                "go",
+                "golang",
+                "golang-library",
+                "oncrpc",
+                "rpc",
+                "sun-rpc",
+                "sunrpc",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "xdrpp/xdrpp",
+            "html_url": "https://github.com/xdrpp/xdrpp",
+            "description": "",
+            "language": "C++",
+            "stars": 19,
+            "topics": [
+                "c-plus-plus",
+                "rfc4506",
+                "rfc5531",
+                "rpc",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "Mouvedia/cb-fetch",
+            "html_url": "https://github.com/Mouvedia/cb-fetch",
+            "description": "🔥 Cross-Browser HTTP client",
+            "language": "JavaScript",
+            "stars": 14,
+            "topics": [
+                "ajax",
+                "cross-browser",
+                "fetch",
+                "fluent-interface",
+                "forward-compatible",
+                "umd",
+                "xdr",
+                "xhr"
+            ]
+        },
+        {
+            "full_name": "bricerenaud/xdr_yara_rule_matching",
+            "html_url": "https://github.com/bricerenaud/xdr_yara_rule_matching",
+            "description": "custom Python script to perform Yara matching in Cortex XDR",
+            "language": "Python",
+            "stars": 14,
+            "topics": [
+                "cortex",
+                "paloaltonetworks",
+                "xdr",
+                "yara"
+            ]
+        },
+        {
+            "full_name": "astroband/ruby-xdr",
+            "html_url": "https://github.com/astroband/ruby-xdr",
+            "description": "Read/write XDR encoded data structures (RFC 4506)",
+            "language": "Ruby",
+            "stars": 12,
+            "topics": [
+                "data-structures",
+                "deserialization",
+                "ruby",
+                "serialization",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "alpine-sec/thevlad",
+            "html_url": "https://github.com/alpine-sec/thevlad",
+            "description": "Analysis-oriented command line tool for remote execution and triage via EDRs API",
+            "language": "Python",
+            "stars": 12,
+            "topics": [
+                "api",
+                "cybersecurity",
+                "edr",
+                "forensics-tools",
+                "mdatp",
+                "python",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "kommitters/elixir_xdr",
+            "html_url": "https://github.com/kommitters/elixir_xdr",
+            "description": "Process XDR data with Elixir. Based on the RFC4506 standard",
+            "language": "Elixir",
+            "stars": 11,
+            "topics": [
+                "crypto",
+                "decoding",
+                "elixir",
+                "encoding",
+                "hacktoberfest",
+                "hex",
+                "stellar",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "opencybersecurityalliance/oxa",
+            "html_url": "https://github.com/opencybersecurityalliance/oxa",
+            "description": "OXA - Open XDR architecture",
+            "language": "",
+            "stars": 11,
+            "topics": [
+                "automation",
+                "csma",
+                "cybersecurity-mesh-architecture",
+                "interoperability",
+                "ocsf",
+                "openapi-specification",
+                "openxdr",
+                "orchestration",
+                "threat-intelligence",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "rabetofficial/xdr-parser",
+            "html_url": "https://github.com/rabetofficial/xdr-parser",
+            "description": "XDR Parser is a package that parses the Envelope XDR string made by Stellar XDR package into a legible and clean JSON.",
+            "language": "JavaScript",
+            "stars": 9,
+            "topics": [
+                "json",
+                "stellar",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "intrusus-dev/cortex-xdr-agentremover",
+            "html_url": "https://github.com/intrusus-dev/cortex-xdr-agentremover",
+            "description": "Script to remove the Cortex XDR agent through a common way and using the agent cleaner tool.",
+            "language": "PowerShell",
+            "stars": 8,
+            "topics": [
+                "cortex",
+                "cortex-xdr",
+                "uninstaller-script",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "xdrpp/goxdr",
+            "html_url": "https://github.com/xdrpp/goxdr",
+            "description": "RFC4506 XDR compiler for go https://xdrpp.github.io/goxdr/pkg/github.com/xdrpp/goxdr/cmd/goxdr/goxdr.1.html",
+            "language": "Go",
+            "stars": 8,
+            "topics": [
+                "golang",
+                "oncrpc",
+                "rfc4506",
+                "rfc5531",
+                "rpc",
+                "sunrpc",
+                "xdr",
+                "xdr-compiler"
+            ]
+        },
+        {
+            "full_name": "madret/xql-generator",
+            "html_url": "https://github.com/madret/xql-generator",
+            "description": "XQL query generator, for generating quick Hunting queries. Cortex XDR focussed. A github pages project.",
+            "language": "",
+            "stars": 6,
+            "topics": [
+                "blueteam",
+                "cortex-xdr",
+                "query-builder",
+                "xdr",
+                "xql"
+            ]
+        },
+        {
+            "full_name": "mahansky/mystellartools-txsigner",
+            "html_url": "https://github.com/mahansky/mystellartools-txsigner",
+            "description": "MyStellar.Tools Transaction Signer",
+            "language": "Vue",
+            "stars": 5,
+            "topics": [
+                "signing",
+                "stellar-network",
+                "transaction-signer",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "da4089/py-xdrlib",
+            "html_url": "https://github.com/da4089/py-xdrlib",
+            "description": "Python module for XDR (IETF RFC1014 / RFC1832 / RFC4506) encoding and decoding",
+            "language": "Python",
+            "stars": 5,
+            "topics": [
+                "nfs",
+                "python",
+                "python3",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "overcat/xdrlib3",
+            "html_url": "https://github.com/overcat/xdrlib3",
+            "description": "A forked version of xdrlib, a module for encoding and decoding XDR (External Data Representation) data in Python.",
+            "language": "Python",
+            "stars": 5,
+            "topics": [
+                "python",
+                "python-module",
+                "rfc-1014",
+                "xdr",
+                "xdrlib"
+            ]
+        },
+        {
+            "full_name": "NONAN23x/SoC-Home-Lab",
+            "html_url": "https://github.com/NONAN23x/SoC-Home-Lab",
+            "description": "Yet another SoC Lab",
+            "language": "Python",
+            "stars": 5,
+            "topics": [
+                "automation",
+                "cybersecurity",
+                "defensive-security",
+                "offensive-security",
+                "security-automation",
+                "security-operations-center",
+                "siem",
+                "wazuh",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "aessecurity/oburix",
+            "html_url": "https://github.com/aessecurity/oburix",
+            "description": "eBPF-based runtime agent for Endpoint Detection and Response for Linux based operating systems.",
+            "language": "C",
+            "stars": 4,
+            "topics": [
+                "agent",
+                "cybersecurity",
+                "ebpf",
+                "edr",
+                "linux",
+                "runtime-security",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "aerospike-examples/cluster-comparator",
+            "html_url": "https://github.com/aerospike-examples/cluster-comparator",
+            "description": "Quickly and easily compare 2 or more different Aerospike repositories to find either mismatched records, or records which are different.",
+            "language": "Java",
+            "stars": 4,
+            "topics": [
+                "aerospike",
+                "clusters",
+                "java",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "jidongbsu/cs452-network-file-system",
+            "html_url": "https://github.com/jidongbsu/cs452-network-file-system",
+            "description": "cs452/cs552 operating systems - the network file system project",
+            "language": "C",
+            "stars": 3,
+            "topics": [
+                "nfs",
+                "rpc",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "J4NN0/socket",
+            "html_url": "https://github.com/J4NN0/socket",
+            "description": "A series of examples of TCP, UDP and XDR connections",
+            "language": "C",
+            "stars": 3,
+            "topics": [
+                "concurrency",
+                "concurrent",
+                "concurrent-programming",
+                "fork",
+                "forking",
+                "process",
+                "select",
+                "socket",
+                "tcp",
+                "tcp-client",
+                "tcp-protocol",
+                "tcp-server",
+                "tcp-socket",
+                "udp",
+                "udp-client",
+                "udp-protocol",
+                "udp-server",
+                "udp-socket",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "stellar/dts-xdr",
+            "html_url": "https://github.com/stellar/dts-xdr",
+            "description": "A library for generating TypeScript declarations (.d.ts) for js-xdr auto-generated files.",
+            "language": "JavaScript",
+            "stars": 3,
+            "topics": [
+                "stellar",
+                "typescript",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "MaximeWewer/Wazuh_kubernetes_hardened",
+            "html_url": "https://github.com/MaximeWewer/Wazuh_kubernetes_hardened",
+            "description": "Deploy a Wazuh cluster with a hardened (prod. ready) stack on Kubernetes.",
+            "language": "Shell",
+            "stars": 3,
+            "topics": [
+                "cybersecurity",
+                "ids",
+                "incident-response",
+                "k8s",
+                "monitoring",
+                "opensearch",
+                "security",
+                "security-hardening",
+                "siem",
+                "wazuh",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "AtlasInsideCorp/UTMStackInstaller",
+            "html_url": "https://github.com/AtlasInsideCorp/UTMStackInstaller",
+            "description": "Customizable SIEM and XDR powered by Real-Time correlation and Threat Intelligence",
+            "language": "Go",
+            "stars": 3,
+            "topics": [
+                "compliance",
+                "correlation",
+                "incident-response",
+                "log-management",
+                "master",
+                "probe",
+                "siem",
+                "threat-intelligence",
+                "threat-management",
+                "utmstack",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "AlphaBravoCompany/wazuh-demo-server",
+            "html_url": "https://github.com/AlphaBravoCompany/wazuh-demo-server",
+            "description": "This script is for demo purposes only. It deploys a bare minimum, single-node Docker host and Wazuh stack running as a docker-compose stack.",
+            "language": "Shell",
+            "stars": 3,
+            "topics": [
+                "docker",
+                "siem",
+                "wazuh",
+                "wazuh-agent",
+                "wazuh-manager",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "bricerenaud/import-EVTX-to-XDR",
+            "html_url": "https://github.com/bricerenaud/import-EVTX-to-XDR",
+            "description": "Simple Python script to convert, enrich and upload an EVTX file to Palo Alto Networks Cortex XDR using an HTTP Custom Collector.",
+            "language": "Python",
+            "stars": 3,
+            "topics": [
+                "cortex",
+                "evtx",
+                "paloaltonetworks",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "vinayakcyber/TTP-Mapper",
+            "html_url": "https://github.com/vinayakcyber/TTP-Mapper",
+            "description": "",
+            "language": "Python",
+            "stars": 2,
+            "topics": [
+                "cti",
+                "graphql",
+                "mdr",
+                "opencti",
+                "wazuh",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "muchdogesec/awesome_detection_rules",
+            "html_url": "https://github.com/muchdogesec/awesome_detection_rules",
+            "description": "A curated list of Awesome Detection Rules",
+            "language": "",
+            "stars": 2,
+            "topics": [
+                "detection-engineering",
+                "detection-rules",
+                "infosec",
+                "siem",
+                "threat-intel",
+                "threat-intelligence",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "kinecosystem/xdrparser",
+            "html_url": "https://github.com/kinecosystem/xdrparser",
+            "description": "Command line tool to unpack Stellar's history xdr files",
+            "language": "Python",
+            "stars": 2,
+            "topics": [
+                "command-line-tool",
+                "kin",
+                "python",
+                "stellar",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "KingHodor/Stellar-XDR",
+            "html_url": "https://github.com/KingHodor/Stellar-XDR",
+            "description": "C Stellar XDR library",
+            "language": "C",
+            "stars": 1,
+            "topics": [
+                "c",
+                "crypto",
+                "cryptocurrency",
+                "stellar",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "raphaelvalentin/arduino-stm32-xdr-rpc",
+            "html_url": "https://github.com/raphaelvalentin/arduino-stm32-xdr-rpc",
+            "description": "XDR protocol for Arduino STM32Core based on the Sun Microsystems XDR/RPC Code",
+            "language": "C++",
+            "stars": 1,
+            "topics": [
+                "arduino",
+                "rpc",
+                "stm32",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "vroncevic/gen_rpc",
+            "html_url": "https://github.com/vroncevic/gen_rpc",
+            "description": "Generate RPC modules",
+            "language": "Python",
+            "stars": 1,
+            "topics": [
+                "c",
+                "generator",
+                "linux",
+                "onc",
+                "oncrpc",
+                "open-network-computing",
+                "python3",
+                "qnx",
+                "remote-procedure-call",
+                "rpc",
+                "rpc-client",
+                "rpc-server",
+                "template",
+                "unix",
+                "xdr",
+                "xdr-compiler"
+            ]
+        },
+        {
+            "full_name": "giovannigarifo/DP1_Socket_XDR",
+            "html_url": "https://github.com/giovannigarifo/DP1_Socket_XDR",
+            "description": "Server and a client written in C that can handle dual protocol (ASCII and XDR) file transfer via the socket API",
+            "language": "C",
+            "stars": 1,
+            "topics": [
+                "c",
+                "c-socket-programming",
+                "politecnico-di-torino",
+                "polito",
+                "socket-api",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "sherifrahim/Wazuh-SIEM-Defneder-Integrated",
+            "html_url": "https://github.com/sherifrahim/Wazuh-SIEM-Defneder-Integrated",
+            "description": "Setting Up Wazuh SIEM/XDR Homelab and Integration of Microsoft Defender into it.",
+            "language": "",
+            "stars": 1,
+            "topics": [
+                "cybersecurity",
+                "defender-for-endpoint",
+                "incident-response",
+                "microsoft-defender",
+                "siem",
+                "soc-analyst",
+                "wazuh",
+                "wazuh-agent",
+                "wazuh-integration",
+                "wazuh-manager",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "phyunsj/api-contract",
+            "html_url": "https://github.com/phyunsj/api-contract",
+            "description": "API (or Service) Contract example (for my own reference)",
+            "language": "C",
+            "stars": 1,
+            "topics": [
+                "api-contract",
+                "encode-decode",
+                "idl",
+                "rpc",
+                "xdr",
+                "zmq"
+            ]
+        },
+        {
+            "full_name": "peterneutron/illumination",
+            "html_url": "https://github.com/peterneutron/illumination",
+            "description": "macOS menu bar app that automatically extends display brightness on XDR‑capable Macs according to the ambient light sensor.",
+            "language": "Swift",
+            "stars": 1,
+            "topics": [
+                "display",
+                "hdr",
+                "mac",
+                "macos",
+                "swift",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "tsv19su254052/LoadWorkData-Scripts",
+            "html_url": "https://github.com/tsv19su254052/LoadWorkData-Scripts",
+            "description": "ПЕТ-проект. Авиационный процессинг, телеметрия и телематика. SQL-ные базы данных и XML-ные структуры данных, запросы, схемы, преобразования",
+            "language": "TSQL",
+            "stars": 1,
+            "topics": [
+                "dtd",
+                "sql",
+                "sql-server",
+                "xdr",
+                "xml",
+                "xml-parser",
+                "xpath",
+                "xquery",
+                "xsd",
+                "xsd-schema",
+                "xslt"
+            ]
+        },
+        {
+            "full_name": "a730/NAR",
+            "html_url": "https://github.com/a730/NAR",
+            "description": "Network Alarm Respons (NAR) - A Smoke Alarm for Your Network ",
+            "language": "JavaScript",
+            "stars": 1,
+            "topics": [
+                "ai",
+                "firewall",
+                "home-security",
+                "llm",
+                "nar",
+                "ndr",
+                "network-security",
+                "openwrt",
+                "siem",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "0xKh4l3d/Wazuh-SIEM-XDR-mit-pfSense-Firewall-HomeLab",
+            "html_url": "https://github.com/0xKh4l3d/Wazuh-SIEM-XDR-mit-pfSense-Firewall-HomeLab",
+            "description": "Dieses Projekt zeigt Schritt für Schritt, wie man mit Wazuh, pfSense und Windows 11 ein komplettes SIEM-/XDR-HomeLab aufbaut, Windows-Endpoints per Agent einbindet und typische Monitoring-Szenarien wie File Integrity Monitoring (FIM) und Registry-Überwachung in einer virtuellen Testumgebung umsetzt.",
+            "language": "",
+            "stars": 1,
+            "topics": [
+                "pfsense-firewall",
+                "siem",
+                "wazuh-agent",
+                "wazuh-integration",
+                "wazuh-manager",
+                "windows-11",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "Mpurushotham/my-cybersecurity-journey",
+            "html_url": "https://github.com/Mpurushotham/my-cybersecurity-journey",
+            "description": "Welcome to my comprehensive cybersecurity documentation repository! This living knowledge base contains hands-on learning notes, practical tutorials, and reproducible lab playbooks covering modern cybersecurity domains.",
+            "language": "",
+            "stars": 1,
+            "topics": [
+                "aws-security",
+                "cyber-security",
+                "iam",
+                "kubernetes-cluster",
+                "linux",
+                "mdc",
+                "microsoft-security",
+                "networking",
+                "python-script",
+                "sentiment-analysis",
+                "siem",
+                "soar",
+                "visual-flow-diagramss",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "grctest/HERTZ-Price-feed-script",
+            "html_url": "https://github.com/grctest/HERTZ-Price-feed-script",
+            "description": "HERTZ Price feed script (Haskell)",
+            "language": "Haskell",
+            "stars": 1,
+            "topics": [
+                "bitshares",
+                "cryptocurrency",
+                "fba",
+                "feed",
+                "haskell",
+                "hertz",
+                "mpa",
+                "price",
+                "script",
+                "usd",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "Cloudouble/simple-xdr",
+            "html_url": "https://github.com/Cloudouble/simple-xdr",
+            "description": "A library for encoding and decoding XDR data within the browser or browser-like environments.",
+            "language": "JavaScript",
+            "stars": 1,
+            "topics": [
+                "javascript",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "arhadnane/CrossSigEngine",
+            "html_url": "https://github.com/arhadnane/CrossSigEngine",
+            "description": "Modular, extensible malware signature generator for multiple families: YARA, Snort/Suricata, Sigma, ClamAV, IOC lists, PEiD-like, Custom pattern JSON, and Zeek.",
+            "language": "C#",
+            "stars": 1,
+            "topics": [
+                "cuckoo",
+                "cybersecurity",
+                "detection-engineering",
+                "dfir",
+                "dotnet",
+                "ids",
+                "incident-response",
+                "ios",
+                "malware-analysis",
+                "rule-engine",
+                "sandbox",
+                "signature",
+                "snort",
+                "threat-hunting",
+                "threat-intelligence",
+                "virustotal",
+                "xdr",
+                "yara-rules",
+                "zeek"
+            ]
+        },
+        {
+            "full_name": "ieCecchetti/c-Sockets",
+            "html_url": "https://github.com/ieCecchetti/c-Sockets",
+            "description": "Some interesting example's sketch of socket in c (TCP,UDP,SSL and XDR). Have fun in trying them",
+            "language": "C",
+            "stars": 1,
+            "topics": [
+                "c",
+                "read",
+                "sender",
+                "sockets",
+                "tcp",
+                "tcp-client",
+                "tcp-server",
+                "tcp-socket",
+                "udp",
+                "udp-client",
+                "udp-server",
+                "udp-socket",
+                "write",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "phyunsj/xdr-data-serialization",
+            "html_url": "https://github.com/phyunsj/xdr-data-serialization",
+            "description": "XDR over ØMQ example (for my own reference)",
+            "language": "C",
+            "stars": 1,
+            "topics": [
+                "de-serialization",
+                "encode-decode",
+                "ipc",
+                "rpc",
+                "xdr",
+                "zeromq"
+            ]
+        },
+        {
+            "full_name": "Unisay/haskell-xdr-parser",
+            "html_url": "https://github.com/Unisay/haskell-xdr-parser",
+            "description": "RFC 4506 - XDR: External Data Representation Parser",
+            "language": "Haskell",
+            "stars": 1,
+            "topics": [
+                "parser",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "lastime1650/VateX",
+            "html_url": "https://github.com/lastime1650/VateX",
+            "description": "VateX is Security Solution representative model",
+            "language": "",
+            "stars": 1,
+            "topics": [
+                "edr",
+                "ndr",
+                "open-source",
+                "project",
+                "security",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "seniverse/xdrc",
+            "html_url": "https://github.com/seniverse/xdrc",
+            "description": "compiler of eXternal Data Representation (XDR) language [RFC4506] and ONC Remote Procedure Call (RPC) language [RFC5531]",
+            "language": "Erlang",
+            "stars": 1,
+            "topics": [
+                "rebar3-plugin",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "ehuelsmann/XDR-Parse",
+            "html_url": "https://github.com/ehuelsmann/XDR-Parse",
+            "description": "Parse XDR (eXternal Data Representation) definitions into an AST (Abstract Syntax Tree)",
+            "language": "Perl",
+            "stars": 0,
+            "topics": [
+                "abstract-syntax-tree",
+                "ast",
+                "external-data-representation",
+                "parser",
+                "perl5",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "stagerightlabs/phpxdr",
+            "html_url": "https://github.com/stagerightlabs/phpxdr",
+            "description": "Read and Write XDR with PHP",
+            "language": "PHP",
+            "stars": 0,
+            "topics": [
+                "php",
+                "rfc-4506",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "cfphilippson/CortexXDR-Queries",
+            "html_url": "https://github.com/cfphilippson/CortexXDR-Queries",
+            "description": "Queries uteis no Cortex",
+            "language": "",
+            "stars": 0,
+            "topics": [
+                "cortex",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "ehuelsmann/XDR-Gen",
+            "html_url": "https://github.com/ehuelsmann/XDR-Gen",
+            "description": "Generate (de)serializers in Perl for XDR definitions",
+            "language": "Perl",
+            "stars": 0,
+            "topics": [
+                "code-generation",
+                "code-generator",
+                "deserialization",
+                "external-data-representation",
+                "perl5",
+                "serialization",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "bastille-templates/wazuh",
+            "html_url": "https://github.com/bastille-templates/wazuh",
+            "description": "The Open Source Security Platform Unified XDR and SIEM protection for endpoints and cloud workloads.",
+            "language": "Shell",
+            "stars": 0,
+            "topics": [
+                "it-infrastructure",
+                "monitoring",
+                "siem",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "go-onc/xdrgen",
+            "html_url": "https://github.com/go-onc/xdrgen",
+            "description": "XDR Schema Compiler",
+            "language": "Go",
+            "stars": 0,
+            "topics": [
+                "golang",
+                "oncrpc",
+                "rpc",
+                "sunrpc",
+                "xdr",
+                "xdr-schemas"
+            ]
+        },
+        {
+            "full_name": "payshares-legacy/ruby-payshares-base",
+            "html_url": "https://github.com/payshares-legacy/ruby-payshares-base",
+            "description": "The payshares-base library is the lowest-level payshares helper library. ",
+            "language": "Ruby",
+            "stars": 0,
+            "topics": [
+                "cryptocurrency",
+                "payshares",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "lof1sec/sophos-xdr",
+            "html_url": "https://github.com/lof1sec/sophos-xdr",
+            "description": "",
+            "language": "Python",
+            "stars": 0,
+            "topics": [
+                "json",
+                "siem",
+                "sophos",
+                "sophos-central-api",
+                "sql",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "Clapboiz/Detection-and-Response-on-AWS",
+            "html_url": "https://github.com/Clapboiz/Detection-and-Response-on-AWS",
+            "description": "",
+            "language": "JavaScript",
+            "stars": 0,
+            "topics": [
+                "aws",
+                "edr",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "Dgarc1a/BlueTricks",
+            "html_url": "https://github.com/Dgarc1a/BlueTricks",
+            "description": "Security scripts and best practices for hardening  servers. Contributions are welcome to help us grow together! 🔐💪❤️",
+            "language": "",
+            "stars": 0,
+            "topics": [
+                "bash",
+                "idr",
+                "linux",
+                "powershell",
+                "python",
+                "siem",
+                "unix",
+                "vulnerability",
+                "windows",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "anjulameegalla/wazuh-tdr-lab",
+            "html_url": "https://github.com/anjulameegalla/wazuh-tdr-lab",
+            "description": "Intrusion Detection & Active Threat Response with Wazuh",
+            "language": "",
+            "stars": 0,
+            "topics": [
+                "siem",
+                "tdr",
+                "threat-detection",
+                "ubuntu",
+                "wazuh",
+                "wazuh-integration",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "speedboat/patdown",
+            "html_url": "https://github.com/speedboat/patdown",
+            "description": "Remotely predicts identifies the presence of EDR/XDR solutions on networks",
+            "language": "Go",
+            "stars": 0,
+            "topics": [
+                "antivirus-evasion",
+                "dns",
+                "edr",
+                "edr-bypass",
+                "edr-evasion",
+                "edr-solutions",
+                "red-team",
+                "scanner",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "carmenabans/P2P-Network",
+            "html_url": "https://github.com/carmenabans/P2P-Network",
+            "description": "Peer-to-peer system for seamless communication and collaboration among distributed nodes.",
+            "language": "C",
+            "stars": 0,
+            "topics": [
+                "client-server",
+                "distributed-systems",
+                "rpc",
+                "soap-web-services",
+                "sockets",
+                "tcp",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "nanxstats/r-serialize-timemachine",
+            "html_url": "https://github.com/nanxstats/r-serialize-timemachine",
+            "description": "Run serialization in all R versions since 1.9.1",
+            "language": "R",
+            "stars": 0,
+            "topics": [
+                "innoextract",
+                "serialization",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "epomatti/aws-wazuh",
+            "html_url": "https://github.com/epomatti/aws-wazuh",
+            "description": "Wazuh running on AWS",
+            "language": "HCL",
+            "stars": 0,
+            "topics": [
+                "aws",
+                "edr",
+                "siem",
+                "terraform",
+                "wazuh",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "flyingcoconut/xdrparser",
+            "html_url": "https://github.com/flyingcoconut/xdrparser",
+            "description": "Python xdr parser",
+            "language": "Python",
+            "stars": 0,
+            "topics": [
+                "oncrpc",
+                "python",
+                "rpc",
+                "sunrpc",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "kladiwi/kdw-telegram",
+            "html_url": "https://github.com/kladiwi/kdw-telegram",
+            "description": "A simple python script for Wazuh-telegram alerts",
+            "language": "Python",
+            "stars": 0,
+            "topics": [
+                "alerting",
+                "criminalip-api",
+                "cyber",
+                "living-off-the-land",
+                "monitoring",
+                "no-dependencies",
+                "python3",
+                "security",
+                "telegram",
+                "telegram-api",
+                "telegram-bot",
+                "threatintelligence",
+                "wazuh",
+                "wazuh-custom-telegram-alerts",
+                "wazuh-integration",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "aashishrbhandari/WaZuh-Security-Insights",
+            "html_url": "https://github.com/aashishrbhandari/WaZuh-Security-Insights",
+            "description": "WaZuh XDR and SIEM Enhancements",
+            "language": "Python",
+            "stars": 0,
+            "topics": [
+                "siem",
+                "siem-dashboards",
+                "wazuh",
+                "wazuh-siem",
+                "wazuh-xdr",
+                "wazuh-xdr-and-siem",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "omegaites/tenant_plug",
+            "html_url": "https://github.com/omegaites/tenant_plug",
+            "description": "🔌 Streamline tenant management in Phoenix and Plug apps with TenantPlug, automatically extracting context from requests for seamless integration.",
+            "language": "Elixir",
+            "stars": 0,
+            "topics": [
+                "cumulocity-iot",
+                "cumulocity-package",
+                "defender-atp",
+                "detection-engineering",
+                "graphile",
+                "graphile-build",
+                "kql",
+                "library",
+                "microsoft",
+                "microsoft365",
+                "middleware",
+                "multi-tenant",
+                "multitenant",
+                "order-management",
+                "phoenix",
+                "python",
+                "security",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "raresteak/python-file-encryption",
+            "html_url": "https://github.com/raresteak/python-file-encryption",
+            "description": "Python file encrypter.   Test your ransomware detection tooling. ",
+            "language": "Python",
+            "stars": 0,
+            "topics": [
+                "ransomware",
+                "ransomware-detection",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "momennagy/CrossSigEngine",
+            "html_url": "https://github.com/momennagy/CrossSigEngine",
+            "description": "🛡️ Generate modular malware signatures for various families, including YARA, Snort, Sigma, and more, with ease using CrossSigEngine.",
+            "language": "C#",
+            "stars": 0,
+            "topics": [
+                "cuckoo",
+                "cybersecurity",
+                "detection-engineering",
+                "dfir",
+                "dotnet",
+                "incident-response",
+                "ios",
+                "malware-analysis",
+                "rule-engine",
+                "sandbox",
+                "signature",
+                "snort",
+                "threat-hunting",
+                "threat-intelligence",
+                "virustotal",
+                "xdr",
+                "yara-rules",
+                "zeek"
+            ]
+        },
+        {
+            "full_name": "mitzep0x1/wazuh-stuff",
+            "html_url": "https://github.com/mitzep0x1/wazuh-stuff",
+            "description": "Wazuh XDR Stuff",
+            "language": "Python",
+            "stars": 0,
+            "topics": [
+                "siem",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "Constantin-Hentgen/Forge-EDR",
+            "html_url": "https://github.com/Constantin-Hentgen/Forge-EDR",
+            "description": "Welcome to Forge-XDR-Agent, an open-source Python project that represents my personal journey in developing an Extended Detection and Response (XDR) system.",
+            "language": "Python",
+            "stars": 0,
+            "topics": [
+                "bandit",
+                "coverage-testing",
+                "cyber-threat-intelligence",
+                "cybersecurity",
+                "docker",
+                "edr",
+                "flake8",
+                "poetry-python",
+                "pytest",
+                "snyk",
+                "solid-principles",
+                "tox",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "z1pti3/jimi",
+            "html_url": "https://github.com/z1pti3/jimi",
+            "description": "Jimi is an automation first no-code platform designed and developed originally for Security Orchestration and Response. Since its launch jimi has developed into a fully fledged IT automation platform which effortlessly integrates with your existing tools unlocking the potential for autonomous IT and Security operations.",
+            "language": "Python",
+            "stars": 166,
+            "topics": [
+                "asset-management",
+                "automation",
+                "it-automation",
+                "jimi",
+                "monitoring",
+                "no-code",
+                "orchestration",
+                "secops",
+                "security",
+                "soar",
+                "workflow-automation",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "UncoderIO/Uncoder_IO",
+            "html_url": "https://github.com/UncoderIO/Uncoder_IO",
+            "description": "An IDE and translation engine for detection engineers and threat hunters. Be faster, write smarter, keep 100% privacy.",
+            "language": "Python",
+            "stars": 165,
+            "topics": [
+                "datalake",
+                "edr",
+                "roota",
+                "siem",
+                "sigma",
+                "threathunting",
+                "translation",
+                "uncoder",
+                "uncoderio",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "securityjoes/ForensicMiner",
+            "html_url": "https://github.com/securityjoes/ForensicMiner",
+            "description": "A really good DFIR automation for collecting and analyzing evidence designed for cybersecurity professionals.",
+            "language": "PowerShell",
+            "stars": 159,
+            "topics": [
+                "automation",
+                "cortex",
+                "crowdstrike",
+                "cyber",
+                "dfir",
+                "edr",
+                "fast",
+                "forensics",
+                "ir",
+                "mdr",
+                "powershell",
+                "security",
+                "soc",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "bgenev/impulse-xdr",
+            "html_url": "https://github.com/bgenev/impulse-xdr",
+            "description": "Fully automated host & network intrusion detection platform. Detects malware from behavioural patterns rather than signatures and enables deeper visibility than legacy tools.",
+            "language": "Python",
+            "stars": 138,
+            "topics": [
+                "cloud",
+                "cybersecurity",
+                "devops",
+                "monitoring",
+                "osquery",
+                "security",
+                "security-tools",
+                "server-security",
+                "siem",
+                "suricata",
+                "visibility",
+                "vpc",
+                "vpc-endpoints",
+                "vps",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "UncoderIO/Roota",
+            "html_url": "https://github.com/UncoderIO/Roota",
+            "description": "Roota is a public-domain language of threat detection and response that combines native queries from a SIEM, EDR, XDR, or Data Lake with standardized metadata and threat intelligence to enable automated translation into other languages",
+            "language": "",
+            "stars": 132,
+            "topics": [
+                "datalake",
+                "edr",
+                "roota",
+                "rootalanguage",
+                "siem",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "lawndoc/AdvancedHuntingQueries",
+            "html_url": "https://github.com/lawndoc/AdvancedHuntingQueries",
+            "description": "Microsoft 365 Advanced Hunting Queries with hotlinks that plug the query right into your tenant.",
+            "language": "",
+            "stars": 129,
+            "topics": [
+                "cyber-security",
+                "cybersecurity",
+                "defender",
+                "defender-atp",
+                "defender-for-endpoint",
+                "detection",
+                "detection-engineering",
+                "hunting",
+                "kql",
+                "kusto",
+                "microsoft",
+                "microsoft365",
+                "security",
+                "threat-hunting",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "brosck/Condor",
+            "html_url": "https://github.com/brosck/Condor",
+            "description": "「🛡️」AVs/EDRs Evasion tool",
+            "language": "Python",
+            "stars": 105,
+            "topics": [
+                "antivirus",
+                "antivirus-evasion",
+                "av",
+                "bypass",
+                "defender",
+                "edr",
+                "evasion",
+                "hacking",
+                "injection",
+                "loader",
+                "protection",
+                "python",
+                "security",
+                "shellcode",
+                "windows",
+                "windows-defender",
+                "xdr"
+            ]
+        }
+    ]
+}

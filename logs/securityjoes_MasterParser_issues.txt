@@ -1,0 +1,7 @@
+Issues for securityjoes/MasterParser (state=all):
+#7 [closed] Log format request (by Amras2322)
+#6 [open] Date format error (by hregis)
+#4 [closed] Unsupported logs (by devkos120)
+#3 [open] Centos Support (by mwfaizel)
+#2 [closed] Linux Support (by chr1x2)
+#1 [closed] AuthLogParser doesn't working  (by GopalSati)

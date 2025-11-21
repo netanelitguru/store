@@ -1,0 +1,451 @@
+{
+    "source": "github_topic",
+    "topic": "mdr",
+    "count": 28,
+    "results": [
+        {
+            "full_name": "securityjoes/MasterParser",
+            "html_url": "https://github.com/securityjoes/MasterParser",
+            "description": "MasterParser is a powerful DFIR tool designed for analyzing and parsing Linux logs",
+            "language": "PowerShell",
+            "stars": 744,
+            "topics": [
+                "automation",
+                "cyber",
+                "cyber-security",
+                "dfir",
+                "dfir-automation",
+                "digital-forensic",
+                "incident-response",
+                "infosec",
+                "ir",
+                "mdr",
+                "powershell",
+                "reporting",
+                "security",
+                "soc",
+                "tools"
+            ]
+        },
+        {
+            "full_name": "securityjoes/ForensicMiner",
+            "html_url": "https://github.com/securityjoes/ForensicMiner",
+            "description": "A really good DFIR automation for collecting and analyzing evidence designed for cybersecurity professionals.",
+            "language": "PowerShell",
+            "stars": 159,
+            "topics": [
+                "automation",
+                "cortex",
+                "crowdstrike",
+                "cyber",
+                "dfir",
+                "edr",
+                "fast",
+                "forensics",
+                "ir",
+                "mdr",
+                "powershell",
+                "security",
+                "soc",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "FlyingSky-CN/MDr",
+            "html_url": "https://github.com/FlyingSky-CN/MDr",
+            "description": "Typecho Theme | MDr - 书写你的篇章",
+            "language": "PHP",
+            "stars": 100,
+            "topics": [
+                "mdr",
+                "mdui",
+                "typecho",
+                "typecho-theme"
+            ]
+        },
+        {
+            "full_name": "kenkunz/svelte-mdr",
+            "html_url": "https://github.com/kenkunz/svelte-mdr",
+            "description": "Svelte Macrodata Refinement UI",
+            "language": "Svelte",
+            "stars": 15,
+            "topics": [
+                "mdr",
+                "severance",
+                "svelte"
+            ]
+        },
+        {
+            "full_name": "xmliszt/mdr",
+            "html_url": "https://github.com/xmliszt/mdr",
+            "description": "Macro Data Refinement workstation by Lumon Industries. Praise Kier.",
+            "language": "TypeScript",
+            "stars": 11,
+            "topics": [
+                "lumon",
+                "mdr",
+                "severance"
+            ]
+        },
+        {
+            "full_name": "mattsteeldue/zxmdr",
+            "html_url": "https://github.com/mattsteeldue/zxmdr",
+            "description": "ZX Microdrive cartridge .MDR file cruncher",
+            "language": "Perl",
+            "stars": 8,
+            "topics": [
+                "cartridge",
+                "mdr",
+                "microdrive",
+                "perl",
+                "sinclair",
+                "spectrum",
+                "zx"
+            ]
+        },
+        {
+            "full_name": "TridentStack/wazuh-docker-secure",
+            "html_url": "https://github.com/TridentStack/wazuh-docker-secure",
+            "description": "Secure Wazuh deployment automation for Docker with enhanced password management, certificate generation, and security hardening. Scripts for full setup and credential management that eliminate default   passwords and implement security best practices.",
+            "language": "Shell",
+            "stars": 6,
+            "topics": [
+                "docker",
+                "mdr",
+                "security",
+                "siem",
+                "soc",
+                "tridentstack",
+                "wazuh"
+            ]
+        },
+        {
+            "full_name": "t4dhg/medical-device-symbols",
+            "html_url": "https://github.com/t4dhg/medical-device-symbols",
+            "description": "Easy and light-weight international medical device symbols based on ISO 15223-1 for regulatory compliance",
+            "language": "TypeScript",
+            "stars": 5,
+            "topics": [
+                "angular",
+                "compliance",
+                "device",
+                "icons",
+                "iso-15220",
+                "ivdr",
+                "label",
+                "labeling",
+                "mdr",
+                "medical",
+                "medical-device",
+                "medical-devices",
+                "react",
+                "regulatory",
+                "svg",
+                "symbols",
+                "typescript",
+                "vue"
+            ]
+        },
+        {
+            "full_name": "Rabrennie/mdr-clock",
+            "html_url": "https://github.com/Rabrennie/mdr-clock",
+            "description": "A digital clock inspired by the Macrodata Refinement software in Severance",
+            "language": "GDScript",
+            "stars": 4,
+            "topics": [
+                "clock",
+                "godot",
+                "mdr",
+                "severance"
+            ]
+        },
+        {
+            "full_name": "fennecdjay/mdr-haskell",
+            "html_url": "https://github.com/fennecdjay/mdr-haskell",
+            "description": "mdr, the markdown runner. ",
+            "language": "Haskell",
+            "stars": 3,
+            "topics": [
+                "doc",
+                "documentation",
+                "literate-programming",
+                "markdown",
+                "markdown-runner",
+                "mdr",
+                "parser",
+                "run",
+                "small",
+                "test",
+                "tests"
+            ]
+        },
+        {
+            "full_name": "vinayakcyber/TTP-Mapper",
+            "html_url": "https://github.com/vinayakcyber/TTP-Mapper",
+            "description": "",
+            "language": "Python",
+            "stars": 2,
+            "topics": [
+                "cti",
+                "graphql",
+                "mdr",
+                "opencti",
+                "wazuh",
+                "xdr"
+            ]
+        },
+        {
+            "full_name": "mcc5635/uber-algo",
+            "html_url": "https://github.com/mcc5635/uber-algo",
+            "description": "First-Dispatch Routing Protocol with a Maximum Dispatch Radius",
+            "language": "Python",
+            "stars": 2,
+            "topics": [
+                "mdr",
+                "uber"
+            ]
+        },
+        {
+            "full_name": "srinivasa-dev/severance-mdr-console",
+            "html_url": "https://github.com/srinivasa-dev/severance-mdr-console",
+            "description": "A Flutter-built clone inspired by the TV show Severance, featuring a console-style UI for monitoring and managing incidents in a fictional MDR (Macro Data Refinement) system. A creative take on cybersecurity workflows with a surreal corporate twist.",
+            "language": "Dart",
+            "stars": 1,
+            "topics": [
+                "dart",
+                "desktop",
+                "fictional-ui",
+                "flutter",
+                "flutter-app",
+                "macos",
+                "macro-data-refinement",
+                "mdr",
+                "mdr-console",
+                "sci-fi",
+                "severance",
+                "tv-show",
+                "ui-clone",
+                "ux-design",
+                "website",
+                "windows"
+            ]
+        },
+        {
+            "full_name": "vinyalme/LiquiCalc",
+            "html_url": "https://github.com/vinyalme/LiquiCalc",
+            "description": "Simulador completo de taxas de adquirência (MDR Padrão, Flex e antecipações) com base em vendas no cartão. Este projeto é a base para o futuro app LiquiCalc, focado em calcular o valor real a ser recebido por vendedores e lojistas.",
+            "language": "Batchfile",
+            "stars": 1,
+            "topics": [
+                "acquiring",
+                "bat",
+                "calculator",
+                "calculator-application",
+                "card-machine",
+                "excel",
+                "finance",
+                "mdr",
+                "payment",
+                "receivables",
+                "simulation",
+                "webapplication"
+            ]
+        },
+        {
+            "full_name": "CodeStudio-Inc/PELARD-UI",
+            "html_url": "https://github.com/CodeStudio-Inc/PELARD-UI",
+            "description": "Monitoring Documenting And Reporting(MDR)",
+            "language": "HTML",
+            "stars": 1,
+            "topics": [
+                "mdr"
+            ]
+        },
+        {
+            "full_name": "Jayveersinh-Raj/tpot_NLP",
+            "html_url": "https://github.com/Jayveersinh-Raj/tpot_NLP",
+            "description": "This repository is from my own nature_inspired_programming repository. I just decided to make it a separate repository. This is an implementation of custom natural language preprocessing for AutoML library tpot.",
+            "language": "Jupyter Notebook",
+            "stars": 1,
+            "topics": [
+                "countvectorizer",
+                "mdr",
+                "natural-language-processing",
+                "natural-language-understanding",
+                "numpy",
+                "pandas",
+                "preprocessing",
+                "tfidf",
+                "tfidf-vectorizer",
+                "tpot",
+                "tpot-automl",
+                "word2vec"
+            ]
+        },
+        {
+            "full_name": "MilanMolnar/MacroDataRefinement",
+            "html_url": "https://github.com/MilanMolnar/MacroDataRefinement",
+            "description": "Severance, mdr simulator, try it here: https://macro-data-refinement-rho.vercel.app/",
+            "language": "TypeScript",
+            "stars": 1,
+            "topics": [
+                "mdr",
+                "mini-game",
+                "react",
+                "severance",
+                "tv-shows",
+                "typescript"
+            ]
+        },
+        {
+            "full_name": "Panagis1980/MDRed",
+            "html_url": "https://github.com/Panagis1980/MDRed",
+            "description": "ZX Spectrum .mdr file editor. Access microdrive mdr files to push get and change files in them or copy files to PC",
+            "language": "C#",
+            "stars": 1,
+            "topics": [
+                "edit",
+                "mdr",
+                "microdrive",
+                "zx-spectrum"
+            ]
+        },
+        {
+            "full_name": "GustavoPereira-Dev/Bootcamp-Heineken-Data-Analyst",
+            "html_url": "https://github.com/GustavoPereira-Dev/Bootcamp-Heineken-Data-Analyst",
+            "description": "Conjunto de projetos referente ao Bootcamp de Análise de Dados (Modelagem, SQL e Excel) da DIO em parceria com a Heineken",
+            "language": "",
+            "stars": 0,
+            "topics": [
+                "data-analysis",
+                "excel",
+                "mdr",
+                "sql"
+            ]
+        },
+        {
+            "full_name": "CodeStudio-Inc/PELARD-DASHBOARD",
+            "html_url": "https://github.com/CodeStudio-Inc/PELARD-DASHBOARD",
+            "description": "FINANCED BY: European Commission: European Instrument for Democracy and Human Rights (EIDHR)",
+            "language": "JavaScript",
+            "stars": 0,
+            "topics": [
+                "mdr"
+            ]
+        },
+        {
+            "full_name": "BichoRenetto/Mot-fleche",
+            "html_url": "https://github.com/BichoRenetto/Mot-fleche",
+            "description": "Repère du fun et de l'amusement pour tous les cruciverbistes de France et de Navarre !",
+            "language": "TeX",
+            "stars": 0,
+            "topics": [
+                "humour",
+                "mdr",
+                "mot-fleches"
+            ]
+        },
+        {
+            "full_name": "aurelmegn/mdR",
+            "html_url": "https://github.com/aurelmegn/mdR",
+            "description": "mdR is a file explorer write with angular and php.  It also allow to preview files with entensions like md ,html, js,css, sass .",
+            "language": "TypeScript",
+            "stars": 0,
+            "topics": [
+                "angular4",
+                "markdown",
+                "markdown-viewer",
+                "mdr",
+                "reader"
+            ]
+        },
+        {
+            "full_name": "CodeStudio-Inc/PELARD-Landing",
+            "html_url": "https://github.com/CodeStudio-Inc/PELARD-Landing",
+            "description": "Protection and Empowerment of Land Rights Defenders in Northern Uganda",
+            "language": "CSS",
+            "stars": 0,
+            "topics": [
+                "mdr"
+            ]
+        },
+        {
+            "full_name": "klsecservices/MDR-integrations",
+            "html_url": "https://github.com/klsecservices/MDR-integrations",
+            "description": "Kaspersky MDR integration is a tool designed to provide the capability to integrate third-party systems with the Kaspersky Managed Detection and Response (MDR) Console.",
+            "language": "Python",
+            "stars": 0,
+            "topics": [
+                "api",
+                "kaspersky",
+                "kuma",
+                "mdr",
+                "python",
+                "siem"
+            ]
+        },
+        {
+            "full_name": "light0222/BotUI",
+            "html_url": "https://github.com/light0222/BotUI",
+            "description": "Petite IHM avec Qt pour un bot Dofus",
+            "language": "C++",
+            "stars": 0,
+            "topics": [
+                "bot",
+                "dofus",
+                "mdr",
+                "mitm"
+            ]
+        },
+        {
+            "full_name": "adliance/oidamed.at",
+            "html_url": "https://github.com/adliance/oidamed.at",
+            "description": "Oida, die EUDAMED ...",
+            "language": "HTML",
+            "stars": 0,
+            "topics": [
+                "ivdr",
+                "mdr",
+                "medical-software"
+            ]
+        },
+        {
+            "full_name": "JKUPIR3/kaspersky-tools",
+            "html_url": "https://github.com/JKUPIR3/kaspersky-tools",
+            "description": "Kaspersky-tools offers security tools inspired by real-time protection, anti-phishing, and vulnerability scanning for safe, educational testing 🐙",
+            "language": "",
+            "stars": 0,
+            "topics": [
+                "csv",
+                "data-feeds",
+                "fidelity-atp-uninstall-tool",
+                "iocs",
+                "kaspersky-security-center",
+                "kuma",
+                "mdr",
+                "microsoft-install-uninstall-tool",
+                "microsoft-uninstall-tool",
+                "opencti",
+                "password-manager",
+                "stix",
+                "taxii",
+                "threatintel",
+                "token",
+                "uninstall-kaspersky-tool",
+                "uninstall-office-2016-tool",
+                "uninstall-webroot-tool"
+            ]
+        },
+        {
+            "full_name": "Leo-Zubiri/Metodo-Desplazamiento-Reduccion",
+            "html_url": "https://github.com/Leo-Zubiri/Metodo-Desplazamiento-Reduccion",
+            "description": "Programacion de sistemas de base. Aplicacion del método desplazamiento reducción para la evaluación de una cadena a través de la reducción mediante reglas. Interfaz hecha con PyQT5.",
+            "language": "Python",
+            "stars": 0,
+            "topics": [
+                "mdr",
+                "python"
+            ]
+        }
+    ]
+}

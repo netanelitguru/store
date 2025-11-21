@@ -1,0 +1,1978 @@
+{
+    "source": "github_topic",
+    "topic": "python",
+    "count": 100,
+    "results": [
+        {
+            "full_name": "donnemartin/system-design-primer",
+            "html_url": "https://github.com/donnemartin/system-design-primer",
+            "description": "Learn how to design large-scale systems. Prep for the system design interview.  Includes Anki flashcards.",
+            "language": "Python",
+            "stars": 327075,
+            "topics": [
+                "design",
+                "design-patterns",
+                "design-system",
+                "development",
+                "interview",
+                "interview-practice",
+                "interview-questions",
+                "programming",
+                "python",
+                "system",
+                "web",
+                "web-application",
+                "webapp"
+            ]
+        },
+        {
+            "full_name": "vinta/awesome-python",
+            "html_url": "https://github.com/vinta/awesome-python",
+            "description": "An opinionated list of awesome Python frameworks, libraries, software and resources.",
+            "language": "Python",
+            "stars": 270329,
+            "topics": [
+                "awesome",
+                "collections",
+                "python",
+                "python-framework",
+                "python-library",
+                "python-resources"
+            ]
+        },
+        {
+            "full_name": "practical-tutorials/project-based-learning",
+            "html_url": "https://github.com/practical-tutorials/project-based-learning",
+            "description": "Curated list of project-based tutorials",
+            "language": "",
+            "stars": 250463,
+            "topics": [
+                "beginner-project",
+                "cpp",
+                "golang",
+                "javascript",
+                "project",
+                "python",
+                "tutorial",
+                "webdevelopment"
+            ]
+        },
+        {
+            "full_name": "TheAlgorithms/Python",
+            "html_url": "https://github.com/TheAlgorithms/Python",
+            "description": "All Algorithms implemented in Python",
+            "language": "Python",
+            "stars": 213539,
+            "topics": [
+                "algorithm",
+                "algorithm-competitions",
+                "algorithms-implemented",
+                "algos",
+                "community-driven",
+                "education",
+                "hacktoberfest",
+                "interview",
+                "learn",
+                "practice",
+                "python",
+                "searches",
+                "sorting-algorithms",
+                "sorts"
+            ]
+        },
+        {
+            "full_name": "tensorflow/tensorflow",
+            "html_url": "https://github.com/tensorflow/tensorflow",
+            "description": "An Open Source Machine Learning Framework for Everyone",
+            "language": "C++",
+            "stars": 192502,
+            "topics": [
+                "deep-learning",
+                "deep-neural-networks",
+                "distributed",
+                "machine-learning",
+                "ml",
+                "neural-network",
+                "python",
+                "tensorflow"
+            ]
+        },
+        {
+            "full_name": "CyC2018/CS-Notes",
+            "html_url": "https://github.com/CyC2018/CS-Notes",
+            "description": ":books: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计",
+            "language": "",
+            "stars": 182897,
+            "topics": [
+                "algorithm",
+                "computer-science",
+                "cpp",
+                "interview",
+                "java",
+                "leetcode",
+                "python",
+                "system-design"
+            ]
+        },
+        {
+            "full_name": "Significant-Gravitas/AutoGPT",
+            "html_url": "https://github.com/Significant-Gravitas/AutoGPT",
+            "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+            "language": "Python",
+            "stars": 179843,
+            "topics": [
+                "ai",
+                "artificial-intelligence",
+                "autonomous-agents",
+                "gpt-4",
+                "llama-api",
+                "openai",
+                "python"
+            ]
+        },
+        {
+            "full_name": "huggingface/transformers",
+            "html_url": "https://github.com/huggingface/transformers",
+            "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+            "language": "Python",
+            "stars": 152804,
+            "topics": [
+                "audio",
+                "deep-learning",
+                "deepseek",
+                "gemma",
+                "glm",
+                "hacktoberfest",
+                "llm",
+                "machine-learning",
+                "model-hub",
+                "natural-language-processing",
+                "nlp",
+                "pretrained-models",
+                "python",
+                "pytorch",
+                "pytorch-transformers",
+                "qwen",
+                "speech-recognition",
+                "transformer",
+                "vlm"
+            ]
+        },
+        {
+            "full_name": "yt-dlp/yt-dlp",
+            "html_url": "https://github.com/yt-dlp/yt-dlp",
+            "description": "A feature-rich command-line audio/video downloader",
+            "language": "Python",
+            "stars": 135793,
+            "topics": [
+                "cli",
+                "downloader",
+                "python",
+                "sponsorblock",
+                "youtube-dl",
+                "youtube-downloader",
+                "yt-dlp"
+            ]
+        },
+        {
+            "full_name": "521xueweihan/HelloGitHub",
+            "html_url": "https://github.com/521xueweihan/HelloGitHub",
+            "description": ":octocat: 分享 GitHub 上有趣、入门级的开源项目。Share interesting, entry-level open source projects on GitHub.",
+            "language": "Python",
+            "stars": 134776,
+            "topics": [
+                "awesome",
+                "github",
+                "hellogithub",
+                "python"
+            ]
+        },
+        {
+            "full_name": "langchain-ai/langchain",
+            "html_url": "https://github.com/langchain-ai/langchain",
+            "description": "🦜🔗 The platform for reliable agents.",
+            "language": "Python",
+            "stars": 120163,
+            "topics": [
+                "agents",
+                "ai",
+                "ai-agents",
+                "ai-agents-framework",
+                "aiagentframework",
+                "anthropic",
+                "chatgpt",
+                "enterprise",
+                "framework",
+                "gemini",
+                "generative-ai",
+                "langchain",
+                "llm",
+                "multiagent",
+                "open-source",
+                "openai",
+                "pydantic",
+                "python",
+                "rag"
+            ]
+        },
+        {
+            "full_name": "langgenius/dify",
+            "html_url": "https://github.com/langgenius/dify",
+            "description": "Production-ready platform for agentic workflow development.",
+            "language": "TypeScript",
+            "stars": 119447,
+            "topics": [
+                "agent",
+                "agentic-ai",
+                "agentic-framework",
+                "agentic-workflow",
+                "ai",
+                "automation",
+                "gemini",
+                "genai",
+                "gpt",
+                "gpt-4",
+                "llm",
+                "low-code",
+                "mcp",
+                "nextjs",
+                "no-code",
+                "openai",
+                "orchestration",
+                "python",
+                "rag",
+                "workflow"
+            ]
+        },
+        {
+            "full_name": "justjavac/free-programming-books-zh_CN",
+            "html_url": "https://github.com/justjavac/free-programming-books-zh_CN",
+            "description": ":books: 免费的计算机编程类中文书籍，欢迎投稿",
+            "language": "",
+            "stars": 115728,
+            "topics": [
+                "android",
+                "angular",
+                "books",
+                "free",
+                "ios",
+                "javascript",
+                "kotlin",
+                "pdf",
+                "programming",
+                "python",
+                "react",
+                "react-native",
+                "swift",
+                "vue"
+            ]
+        },
+        {
+            "full_name": "pytorch/pytorch",
+            "html_url": "https://github.com/pytorch/pytorch",
+            "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+            "language": "Python",
+            "stars": 95249,
+            "topics": [
+                "autograd",
+                "deep-learning",
+                "gpu",
+                "machine-learning",
+                "neural-network",
+                "numpy",
+                "python",
+                "tensor"
+            ]
+        },
+        {
+            "full_name": "nvbn/thefuck",
+            "html_url": "https://github.com/nvbn/thefuck",
+            "description": "Magnificent app which corrects your previous console command.",
+            "language": "Python",
+            "stars": 94701,
+            "topics": [
+                "python",
+                "shell"
+            ]
+        },
+        {
+            "full_name": "comfyanonymous/ComfyUI",
+            "html_url": "https://github.com/comfyanonymous/ComfyUI",
+            "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+            "language": "Python",
+            "stars": 94115,
+            "topics": [
+                "ai",
+                "comfy",
+                "comfyui",
+                "python",
+                "pytorch",
+                "stable-diffusion"
+            ]
+        },
+        {
+            "full_name": "fastapi/fastapi",
+            "html_url": "https://github.com/fastapi/fastapi",
+            "description": "FastAPI framework, high performance, easy to learn, fast to code, ready for production",
+            "language": "Python",
+            "stars": 92117,
+            "topics": [
+                "api",
+                "async",
+                "asyncio",
+                "fastapi",
+                "framework",
+                "json",
+                "json-schema",
+                "openapi",
+                "openapi3",
+                "pydantic",
+                "python",
+                "python-types",
+                "python3",
+                "redoc",
+                "rest",
+                "starlette",
+                "swagger",
+                "swagger-ui",
+                "uvicorn",
+                "web"
+            ]
+        },
+        {
+            "full_name": "django/django",
+            "html_url": "https://github.com/django/django",
+            "description": "The Web framework for perfectionists with deadlines.",
+            "language": "Python",
+            "stars": 85852,
+            "topics": [
+                "apps",
+                "django",
+                "framework",
+                "models",
+                "orm",
+                "python",
+                "templates",
+                "views",
+                "web"
+            ]
+        },
+        {
+            "full_name": "home-assistant/core",
+            "html_url": "https://github.com/home-assistant/core",
+            "description": ":house_with_garden: Open source home automation that puts local control and privacy first.",
+            "language": "Python",
+            "stars": 82696,
+            "topics": [
+                "asyncio",
+                "hacktoberfest",
+                "home-automation",
+                "internet-of-things",
+                "iot",
+                "mqtt",
+                "python",
+                "raspberry-pi"
+            ]
+        },
+        {
+            "full_name": "3b1b/manim",
+            "html_url": "https://github.com/3b1b/manim",
+            "description": "Animation engine for explanatory math videos",
+            "language": "Python",
+            "stars": 81955,
+            "topics": [
+                "3b1b-videos",
+                "animation",
+                "explanatory-math-videos",
+                "python"
+            ]
+        },
+        {
+            "full_name": "bregman-arie/devops-exercises",
+            "html_url": "https://github.com/bregman-arie/devops-exercises",
+            "description": "Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions",
+            "language": "Python",
+            "stars": 79904,
+            "topics": [
+                "ansible",
+                "aws",
+                "azure",
+                "coding",
+                "containers",
+                "devops",
+                "docker",
+                "git",
+                "interview",
+                "interview-questions",
+                "kubernetes",
+                "linux",
+                "openstack",
+                "production-engineer",
+                "prometheus",
+                "python",
+                "sql",
+                "sre",
+                "terraform"
+            ]
+        },
+        {
+            "full_name": "Shubhamsaboo/awesome-llm-apps",
+            "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+            "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.",
+            "language": "Python",
+            "stars": 79289,
+            "topics": [
+                "llms",
+                "python",
+                "rag"
+            ]
+        },
+        {
+            "full_name": "microsoft/ML-For-Beginners",
+            "html_url": "https://github.com/microsoft/ML-For-Beginners",
+            "description": "12 weeks, 26 lessons, 52 quizzes, classic Machine Learning for all",
+            "language": "Jupyter Notebook",
+            "stars": 79118,
+            "topics": [
+                "data-science",
+                "education",
+                "machine-learning",
+                "machine-learning-algorithms",
+                "machinelearning",
+                "machinelearning-python",
+                "microsoft-for-beginners",
+                "ml",
+                "python",
+                "r",
+                "scikit-learn",
+                "scikit-learn-python"
+            ]
+        },
+        {
+            "full_name": "rasbt/LLMs-from-scratch",
+            "html_url": "https://github.com/rasbt/LLMs-from-scratch",
+            "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+            "language": "Jupyter Notebook",
+            "stars": 79101,
+            "topics": [
+                "ai",
+                "artificial-intelligence",
+                "chatbot",
+                "chatgpt",
+                "deep-learning",
+                "from-scratch",
+                "generative-ai",
+                "gpt",
+                "language-model",
+                "large-language-models",
+                "llm",
+                "machine-learning",
+                "neural-networks",
+                "python",
+                "pytorch",
+                "transformers"
+            ]
+        },
+        {
+            "full_name": "d2l-ai/d2l-zh",
+            "html_url": "https://github.com/d2l-ai/d2l-zh",
+            "description": "《动手学深度学习》：面向中文读者、能运行、可讨论。中英文版被70多个国家的500多所大学用于教学。",
+            "language": "Python",
+            "stars": 73963,
+            "topics": [
+                "book",
+                "chinese",
+                "computer-vision",
+                "deep-learning",
+                "machine-learning",
+                "natural-language-processing",
+                "notebook",
+                "python"
+            ]
+        },
+        {
+            "full_name": "astral-sh/uv",
+            "html_url": "https://github.com/astral-sh/uv",
+            "description": "An extremely fast Python package and project manager, written in Rust.",
+            "language": "Rust",
+            "stars": 73264,
+            "topics": [
+                "packaging",
+                "python",
+                "resolver",
+                "uv"
+            ]
+        },
+        {
+            "full_name": "browser-use/browser-use",
+            "html_url": "https://github.com/browser-use/browser-use",
+            "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+            "language": "Python",
+            "stars": 72793,
+            "topics": [
+                "ai-agents",
+                "ai-tools",
+                "browser-automation",
+                "browser-use",
+                "llm",
+                "playwright",
+                "python"
+            ]
+        },
+        {
+            "full_name": "pallets/flask",
+            "html_url": "https://github.com/pallets/flask",
+            "description": "The Python micro framework for building web applications.",
+            "language": "Python",
+            "stars": 70802,
+            "topics": [
+                "flask",
+                "jinja",
+                "pallets",
+                "python",
+                "web-framework",
+                "werkzeug",
+                "wsgi"
+            ]
+        },
+        {
+            "full_name": "sherlock-project/sherlock",
+            "html_url": "https://github.com/sherlock-project/sherlock",
+            "description": "Hunt down social media accounts by username across social networks",
+            "language": "Python",
+            "stars": 70441,
+            "topics": [
+                "cli",
+                "cti",
+                "cybersecurity",
+                "forensics",
+                "hacktoberfest",
+                "information-gathering",
+                "infosec",
+                "linux",
+                "osint",
+                "pentesting",
+                "python",
+                "python3",
+                "reconnaissance",
+                "redteam",
+                "sherlock",
+                "tools"
+            ]
+        },
+        {
+            "full_name": "apache/superset",
+            "html_url": "https://github.com/apache/superset",
+            "description": "Apache Superset is a Data Visualization and Data Exploration Platform",
+            "language": "TypeScript",
+            "stars": 69052,
+            "topics": [
+                "analytics",
+                "apache",
+                "apache-superset",
+                "asf",
+                "bi",
+                "business-analytics",
+                "business-intelligence",
+                "data-analysis",
+                "data-analytics",
+                "data-engineering",
+                "data-science",
+                "data-visualization",
+                "data-viz",
+                "flask",
+                "python",
+                "react",
+                "sql-editor",
+                "superset"
+            ]
+        },
+        {
+            "full_name": "ansible/ansible",
+            "html_url": "https://github.com/ansible/ansible",
+            "description": "Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy and maintain. Automate everything from code deployment to network configuration to cloud management, in a language that approaches plain English, using SSH, with no agents to install on remote systems. https://docs.ansible.com.",
+            "language": "Python",
+            "stars": 67069,
+            "topics": [
+                "ansible",
+                "python"
+            ]
+        },
+        {
+            "full_name": "scikit-learn/scikit-learn",
+            "html_url": "https://github.com/scikit-learn/scikit-learn",
+            "description": "scikit-learn: machine learning in Python",
+            "language": "Python",
+            "stars": 64089,
+            "topics": [
+                "data-analysis",
+                "data-science",
+                "machine-learning",
+                "python",
+                "statistics"
+            ]
+        },
+        {
+            "full_name": "keras-team/keras",
+            "html_url": "https://github.com/keras-team/keras",
+            "description": "Deep Learning for humans",
+            "language": "Python",
+            "stars": 63580,
+            "topics": [
+                "data-science",
+                "deep-learning",
+                "jax",
+                "machine-learning",
+                "neural-networks",
+                "python",
+                "pytorch",
+                "tensorflow"
+            ]
+        },
+        {
+            "full_name": "localstack/localstack",
+            "html_url": "https://github.com/localstack/localstack",
+            "description": "💻 A fully functional local AWS cloud stack. Develop and test your cloud & Serverless apps offline",
+            "language": "Python",
+            "stars": 63157,
+            "topics": [
+                "aws",
+                "cloud",
+                "continuous-integration",
+                "developer-tools",
+                "localstack",
+                "python",
+                "testing"
+            ]
+        },
+        {
+            "full_name": "openinterpreter/open-interpreter",
+            "html_url": "https://github.com/openinterpreter/open-interpreter",
+            "description": "A natural language interface for computers",
+            "language": "Python",
+            "stars": 60858,
+            "topics": [
+                "chatgpt",
+                "gpt-4",
+                "interpreter",
+                "javascript",
+                "nodejs",
+                "python"
+            ]
+        },
+        {
+            "full_name": "ryanoasis/nerd-fonts",
+            "html_url": "https://github.com/ryanoasis/nerd-fonts",
+            "description": "Iconic font aggregator, collection, & patcher. 3,600+ icons, 50+ patched fonts: Hack, Source Code Pro, more. Glyph collections: Font Awesome, Material Design Icons, Octicons, & more",
+            "language": "CSS",
+            "stars": 60544,
+            "topics": [
+                "font",
+                "font-awesome",
+                "fonts",
+                "hacktoberfest",
+                "icon-font",
+                "iconic-fonts",
+                "octicons",
+                "patched-fonts",
+                "patcher",
+                "powerline",
+                "python",
+                "shell",
+                "statusline"
+            ]
+        },
+        {
+            "full_name": "youngyangyang04/leetcode-master",
+            "html_url": "https://github.com/youngyangyang04/leetcode-master",
+            "description": "《代码随想录》LeetCode 刷题攻略：200道经典题目刷题顺序，共60w字的详细图解，视频难点剖析，50余张思维导图，支持C++，Java，Python，Go，JavaScript等多语言版本，从此算法学习不再迷茫！🔥🔥 来看看，你会发现相见恨晚！🚀 ",
+            "language": "Shell",
+            "stars": 59243,
+            "topics": [
+                "algorithm",
+                "cpp",
+                "go",
+                "interview",
+                "java",
+                "javascript",
+                "leetcode",
+                "offer",
+                "programmer",
+                "python"
+            ]
+        },
+        {
+            "full_name": "scrapy/scrapy",
+            "html_url": "https://github.com/scrapy/scrapy",
+            "description": "Scrapy, a fast high-level web crawling & scraping framework for Python.",
+            "language": "Python",
+            "stars": 58995,
+            "topics": [
+                "crawler",
+                "crawling",
+                "framework",
+                "hacktoberfest",
+                "python",
+                "scraping",
+                "web-scraping",
+                "web-scraping-python"
+            ]
+        },
+        {
+            "full_name": "CorentinJ/Real-Time-Voice-Cloning",
+            "html_url": "https://github.com/CorentinJ/Real-Time-Voice-Cloning",
+            "description": "Clone a voice in 5 seconds to generate arbitrary speech in real-time",
+            "language": "Python",
+            "stars": 58887,
+            "topics": [
+                "deep-learning",
+                "python",
+                "pytorch",
+                "tensorflow",
+                "tts",
+                "voice-cloning"
+            ]
+        },
+        {
+            "full_name": "ageitgey/face_recognition",
+            "html_url": "https://github.com/ageitgey/face_recognition",
+            "description": "The world's simplest facial recognition api for Python and the command line",
+            "language": "Python",
+            "stars": 55788,
+            "topics": [
+                "face-detection",
+                "face-recognition",
+                "machine-learning",
+                "python"
+            ]
+        },
+        {
+            "full_name": "azl397985856/leetcode",
+            "html_url": "https://github.com/azl397985856/leetcode",
+            "description": "LeetCode Solutions: A Record of My Problem Solving Journey.( leetcode题解，记录自己的leetcode解题之路。)",
+            "language": "JavaScript",
+            "stars": 55715,
+            "topics": [
+                "algo",
+                "algorithm",
+                "algorithms",
+                "algorithms-datastructures",
+                "computer-science",
+                "cpp",
+                "data-structures",
+                "interview",
+                "java",
+                "javascript",
+                "leetcode",
+                "leetcode-solutions",
+                "python",
+                "tree"
+            ]
+        },
+        {
+            "full_name": "AntonOsika/gpt-engineer",
+            "html_url": "https://github.com/AntonOsika/gpt-engineer",
+            "description": "CLI platform to experiment with codegen. Precursor to: https://lovable.dev",
+            "language": "Python",
+            "stars": 55044,
+            "topics": [
+                "ai",
+                "autonomous-agent",
+                "code-generation",
+                "codebase-generation",
+                "codegen",
+                "coding-assistant",
+                "gpt-4",
+                "gpt-engineer",
+                "openai",
+                "python"
+            ]
+        },
+        {
+            "full_name": "OpenBB-finance/OpenBB",
+            "html_url": "https://github.com/OpenBB-finance/OpenBB",
+            "description": "Financial data platform for analysts, quants and AI agents.",
+            "language": "Python",
+            "stars": 54673,
+            "topics": [
+                "ai",
+                "crypto",
+                "derivatives",
+                "economics",
+                "equity",
+                "finance",
+                "fixed-income",
+                "machine-learning",
+                "openbb",
+                "options",
+                "python",
+                "quantitative-finance",
+                "stocks"
+            ]
+        },
+        {
+            "full_name": "Textualize/rich",
+            "html_url": "https://github.com/Textualize/rich",
+            "description": "Rich is a Python library for rich text and beautiful formatting in the terminal.",
+            "language": "Python",
+            "stars": 54489,
+            "topics": [
+                "ansi-colors",
+                "emoji",
+                "markdown",
+                "progress-bar",
+                "progress-bar-python",
+                "python",
+                "python-library",
+                "python3",
+                "rich",
+                "syntax-highlighting",
+                "tables",
+                "terminal",
+                "terminal-color",
+                "traceback",
+                "tracebacks-rich",
+                "tui"
+            ]
+        },
+        {
+            "full_name": "psf/requests",
+            "html_url": "https://github.com/psf/requests",
+            "description": "A simple, yet elegant, HTTP library.",
+            "language": "Python",
+            "stars": 53493,
+            "topics": [
+                "client",
+                "cookies",
+                "forhumans",
+                "http",
+                "humans",
+                "python",
+                "python-requests",
+                "requests"
+            ]
+        },
+        {
+            "full_name": "Asabeneh/30-Days-Of-Python",
+            "html_url": "https://github.com/Asabeneh/30-Days-Of-Python",
+            "description": "30 days of Python programming challenge is a step-by-step guide to learn the Python programming language in 30 days. This challenge may take more than 100 days, follow your own pace.  These videos may help too: https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw",
+            "language": "Python",
+            "stars": 52466,
+            "topics": [
+                "30-days-of-python",
+                "flask",
+                "github",
+                "heroku",
+                "matplotlib",
+                "mongodb",
+                "numpy",
+                "pandas",
+                "python",
+                "python3"
+            ]
+        },
+        {
+            "full_name": "pathwaycom/pathway",
+            "html_url": "https://github.com/pathwaycom/pathway",
+            "description": "Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.",
+            "language": "Python",
+            "stars": 50189,
+            "topics": [
+                "batch-processing",
+                "data-analytics",
+                "data-pipelines",
+                "data-processing",
+                "dataflow",
+                "etl",
+                "etl-framework",
+                "iot-analytics",
+                "kafka",
+                "machine-learning-algorithms",
+                "pathway",
+                "python",
+                "real-time",
+                "rust",
+                "stream-processing",
+                "streaming",
+                "time-series-analysis"
+            ]
+        },
+        {
+            "full_name": "opendatalab/MinerU",
+            "html_url": "https://github.com/opendatalab/MinerU",
+            "description": "Transforms complex documents like PDFs into LLM-ready markdown/JSON for your Agentic workflows.",
+            "language": "Python",
+            "stars": 49183,
+            "topics": [
+                "ai4science",
+                "document-analysis",
+                "extract-data",
+                "layout-analysis",
+                "ocr",
+                "parser",
+                "pdf",
+                "pdf-converter",
+                "pdf-extractor-llm",
+                "pdf-extractor-pretrain",
+                "pdf-extractor-rag",
+                "pdf-parser",
+                "python"
+            ]
+        },
+        {
+            "full_name": "ultralytics/ultralytics",
+            "html_url": "https://github.com/ultralytics/ultralytics",
+            "description": "Ultralytics YOLO 🚀",
+            "language": "Python",
+            "stars": 48953,
+            "topics": [
+                "cli",
+                "computer-vision",
+                "deep-learning",
+                "hub",
+                "image-classification",
+                "instance-segmentation",
+                "machine-learning",
+                "object-detection",
+                "pose-estimation",
+                "python",
+                "pytorch",
+                "rotated-object-detection",
+                "segment-anything",
+                "tracking",
+                "ultralytics",
+                "yolo",
+                "yolo-world",
+                "yolo11",
+                "yolo26",
+                "yolov8"
+            ]
+        },
+        {
+            "full_name": "Avik-Jain/100-Days-Of-ML-Code",
+            "html_url": "https://github.com/Avik-Jain/100-Days-Of-ML-Code",
+            "description": "100 Days of ML Coding",
+            "language": "",
+            "stars": 48810,
+            "topics": [
+                "100-days-of-code-log",
+                "100daysofcode",
+                "deep-learning",
+                "implementation",
+                "infographics",
+                "linear-algebra",
+                "linear-regression",
+                "logistic-regression",
+                "machine-learning",
+                "machine-learning-algorithms",
+                "naive-bayes-classifier",
+                "python",
+                "scikit-learn",
+                "siraj-raval",
+                "siraj-raval-challenge",
+                "support-vector-machines",
+                "svm",
+                "tutorial"
+            ]
+        },
+        {
+            "full_name": "harry0703/MoneyPrinterTurbo",
+            "html_url": "https://github.com/harry0703/MoneyPrinterTurbo",
+            "description": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
+            "language": "Python",
+            "stars": 47856,
+            "topics": [
+                "ai",
+                "automation",
+                "chatgpt",
+                "moviepy",
+                "python",
+                "shortvideo",
+                "tiktok"
+            ]
+        },
+        {
+            "full_name": "odoo/odoo",
+            "html_url": "https://github.com/odoo/odoo",
+            "description": "Odoo. Open Source Apps To Grow Your Business.",
+            "language": "Python",
+            "stars": 47352,
+            "topics": [
+                "apps",
+                "business",
+                "erp",
+                "management",
+                "odoo",
+                "odoo-apps",
+                "python"
+            ]
+        },
+        {
+            "full_name": "pandas-dev/pandas",
+            "html_url": "https://github.com/pandas-dev/pandas",
+            "description": "Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more",
+            "language": "Python",
+            "stars": 47154,
+            "topics": [
+                "alignment",
+                "data-analysis",
+                "data-science",
+                "flexible",
+                "pandas",
+                "python"
+            ]
+        },
+        {
+            "full_name": "serhii-londar/open-source-mac-os-apps",
+            "html_url": "https://github.com/serhii-londar/open-source-mac-os-apps",
+            "description": "🚀 Awesome list of open source applications for macOS. https://t.me/s/opensourcemacosapps",
+            "language": "",
+            "stars": 46336,
+            "topics": [
+                "applications",
+                "apps",
+                "awesome",
+                "awesome-list",
+                "c",
+                "c-plus-plus",
+                "hacktoberfest",
+                "javascript",
+                "mac",
+                "macos",
+                "macos-application",
+                "macosx",
+                "objective-c",
+                "open-source",
+                "opensource",
+                "python",
+                "ruby",
+                "swift"
+            ]
+        },
+        {
+            "full_name": "jakevdp/PythonDataScienceHandbook",
+            "html_url": "https://github.com/jakevdp/PythonDataScienceHandbook",
+            "description": "Python Data Science Handbook: full text in Jupyter Notebooks",
+            "language": "Jupyter Notebook",
+            "stars": 46043,
+            "topics": [
+                "jupyter-notebook",
+                "matplotlib",
+                "numpy",
+                "pandas",
+                "python",
+                "scikit-learn"
+            ]
+        },
+        {
+            "full_name": "freqtrade/freqtrade",
+            "html_url": "https://github.com/freqtrade/freqtrade",
+            "description": "Free, open source crypto trading bot",
+            "language": "Python",
+            "stars": 44687,
+            "topics": [
+                "algorithmic-trading",
+                "bitcoin",
+                "cryptocurrencies",
+                "cryptocurrency",
+                "freqtrade",
+                "python",
+                "telegram-bot",
+                "trade",
+                "trading-bot"
+            ]
+        },
+        {
+            "full_name": "GokuMohandas/Made-With-ML",
+            "html_url": "https://github.com/GokuMohandas/Made-With-ML",
+            "description": "Learn how to design, develop, deploy and iterate on production-grade ML applications.",
+            "language": "Jupyter Notebook",
+            "stars": 44476,
+            "topics": [
+                "data-engineering",
+                "data-quality",
+                "data-science",
+                "deep-learning",
+                "distributed-ml",
+                "distributed-training",
+                "llms",
+                "machine-learning",
+                "mlops",
+                "natural-language-processing",
+                "python",
+                "pytorch",
+                "ray"
+            ]
+        },
+        {
+            "full_name": "astral-sh/ruff",
+            "html_url": "https://github.com/astral-sh/ruff",
+            "description": "An extremely fast Python linter and code formatter, written in Rust.",
+            "language": "Rust",
+            "stars": 43913,
+            "topics": [
+                "linter",
+                "pep8",
+                "python",
+                "python3",
+                "ruff",
+                "rust",
+                "rustpython",
+                "static-analysis",
+                "static-code-analysis",
+                "style-guide",
+                "styleguide"
+            ]
+        },
+        {
+            "full_name": "aymericdamien/TensorFlow-Examples",
+            "html_url": "https://github.com/aymericdamien/TensorFlow-Examples",
+            "description": "TensorFlow Tutorial and Examples for Beginners (support TF v1 & v2)",
+            "language": "Jupyter Notebook",
+            "stars": 43757,
+            "topics": [
+                "deep-learning",
+                "examples",
+                "machine-learning",
+                "python",
+                "tensorflow",
+                "tutorial"
+            ]
+        },
+        {
+            "full_name": "pyenv/pyenv",
+            "html_url": "https://github.com/pyenv/pyenv",
+            "description": "Simple Python version management",
+            "language": "Roff",
+            "stars": 43695,
+            "topics": [
+                "python",
+                "shell"
+            ]
+        },
+        {
+            "full_name": "coqui-ai/TTS",
+            "html_url": "https://github.com/coqui-ai/TTS",
+            "description": "🐸💬 - a deep learning toolkit for Text-to-Speech, battle-tested in research and production",
+            "language": "Python",
+            "stars": 43540,
+            "topics": [
+                "deep-learning",
+                "glow-tts",
+                "hifigan",
+                "melgan",
+                "multi-speaker-tts",
+                "python",
+                "pytorch",
+                "speaker-encoder",
+                "speaker-encodings",
+                "speech",
+                "speech-synthesis",
+                "tacotron",
+                "text-to-speech",
+                "tts",
+                "tts-model",
+                "vocoder",
+                "voice-cloning",
+                "voice-conversion",
+                "voice-synthesis"
+            ]
+        },
+        {
+            "full_name": "mem0ai/mem0",
+            "html_url": "https://github.com/mem0ai/mem0",
+            "description": "Universal memory layer for AI Agents",
+            "language": "Python",
+            "stars": 43372,
+            "topics": [
+                "agents",
+                "ai",
+                "ai-agents",
+                "application",
+                "chatbots",
+                "chatgpt",
+                "genai",
+                "hacktoberfest",
+                "llm",
+                "long-term-memory",
+                "memory",
+                "memory-management",
+                "python",
+                "rag",
+                "state-management"
+            ]
+        },
+        {
+            "full_name": "apache/airflow",
+            "html_url": "https://github.com/apache/airflow",
+            "description": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
+            "language": "Python",
+            "stars": 43268,
+            "topics": [
+                "airflow",
+                "apache",
+                "apache-airflow",
+                "automation",
+                "dag",
+                "data-engineering",
+                "data-integration",
+                "data-orchestrator",
+                "data-pipelines",
+                "data-science",
+                "elt",
+                "etl",
+                "machine-learning",
+                "mlops",
+                "orchestration",
+                "python",
+                "scheduler",
+                "workflow",
+                "workflow-engine",
+                "workflow-orchestration"
+            ]
+        },
+        {
+            "full_name": "GitHubDaily/GitHubDaily",
+            "html_url": "https://github.com/GitHubDaily/GitHubDaily",
+            "description": "坚持分享 GitHub 上高质量、有趣实用的开源技术教程、开发者工具、编程网站、技术资讯。A list cool, interesting projects of GitHub.",
+            "language": "",
+            "stars": 43023,
+            "topics": [
+                "ai",
+                "algorithms-and-data-structures",
+                "backend",
+                "developer-tools",
+                "development",
+                "frontend",
+                "github",
+                "java",
+                "javascript",
+                "kubernetes",
+                "linux",
+                "markdown",
+                "open-source",
+                "python",
+                "tutorials",
+                "web"
+            ]
+        },
+        {
+            "full_name": "getsentry/sentry",
+            "html_url": "https://github.com/getsentry/sentry",
+            "description": "Developer-first error tracking and performance monitoring",
+            "language": "Python",
+            "stars": 42505,
+            "topics": [
+                "apm",
+                "crash-reporting",
+                "crash-reports",
+                "csp-report",
+                "devops",
+                "django",
+                "error-logging",
+                "error-monitoring",
+                "fair-source",
+                "hacktoberfest",
+                "monitor",
+                "monitoring",
+                "python",
+                "sentry",
+                "tag-production"
+            ]
+        },
+        {
+            "full_name": "faif/python-patterns",
+            "html_url": "https://github.com/faif/python-patterns",
+            "description": "A collection of design patterns/idioms in Python",
+            "language": "Python",
+            "stars": 42437,
+            "topics": [
+                "design-patterns",
+                "idioms",
+                "python"
+            ]
+        },
+        {
+            "full_name": "apache/spark",
+            "html_url": "https://github.com/apache/spark",
+            "description": "Apache Spark - A unified analytics engine for large-scale data processing",
+            "language": "Scala",
+            "stars": 42339,
+            "topics": [
+                "big-data",
+                "java",
+                "jdbc",
+                "python",
+                "r",
+                "scala",
+                "spark",
+                "sql"
+            ]
+        },
+        {
+            "full_name": "streamlit/streamlit",
+            "html_url": "https://github.com/streamlit/streamlit",
+            "description": "Streamlit — A faster way to build and share data apps.",
+            "language": "Python",
+            "stars": 42308,
+            "topics": [
+                "data-analysis",
+                "data-science",
+                "data-visualization",
+                "deep-learning",
+                "developer-tools",
+                "machine-learning",
+                "python",
+                "streamlit"
+            ]
+        },
+        {
+            "full_name": "apachecn/ailearning",
+            "html_url": "https://github.com/apachecn/ailearning",
+            "description": "AiLearning：数据分析+机器学习实战+线性代数+PyTorch+NLTK+TF2",
+            "language": "Python",
+            "stars": 41739,
+            "topics": [
+                "adaboost",
+                "apriori",
+                "deeplearning",
+                "dnn",
+                "fp-growth",
+                "kmeans",
+                "logistic",
+                "lstm",
+                "mahchine-leaning",
+                "naivebayes",
+                "nlp",
+                "pca",
+                "python",
+                "recommendedsystem",
+                "regression",
+                "rnn",
+                "scikit-learn",
+                "sklearn",
+                "svd",
+                "svm"
+            ]
+        },
+        {
+            "full_name": "mitmproxy/mitmproxy",
+            "html_url": "https://github.com/mitmproxy/mitmproxy",
+            "description": "An interactive TLS-capable intercepting HTTP proxy for penetration testers and software developers.",
+            "language": "Python",
+            "stars": 41290,
+            "topics": [
+                "debugging",
+                "http",
+                "http2",
+                "man-in-the-middle",
+                "mitmproxy",
+                "proxy",
+                "python",
+                "security",
+                "ssl",
+                "tls",
+                "websocket"
+            ]
+        },
+        {
+            "full_name": "psf/black",
+            "html_url": "https://github.com/psf/black",
+            "description": "The uncompromising Python code formatter",
+            "language": "Python",
+            "stars": 41161,
+            "topics": [
+                "autopep8",
+                "code",
+                "codeformatter",
+                "formatter",
+                "gofmt",
+                "hacktoberfest",
+                "pre-commit-hook",
+                "python",
+                "yapf"
+            ]
+        },
+        {
+            "full_name": "gradio-app/gradio",
+            "html_url": "https://github.com/gradio-app/gradio",
+            "description": "Build and share delightful machine learning apps, all in Python. 🌟 Star to support our work!",
+            "language": "Python",
+            "stars": 40578,
+            "topics": [
+                "data-analysis",
+                "data-science",
+                "data-visualization",
+                "deep-learning",
+                "deploy",
+                "gradio",
+                "gradio-interface",
+                "interface",
+                "machine-learning",
+                "models",
+                "python",
+                "python-notebook",
+                "ui",
+                "ui-components"
+            ]
+        },
+        {
+            "full_name": "makeplane/plane",
+            "html_url": "https://github.com/makeplane/plane",
+            "description": "🔥 🔥 🔥 Open Source JIRA, Linear, Monday, and Asana Alternative. Plane helps you track your issues, epics, and cycles the easiest way on the planet.",
+            "language": "TypeScript",
+            "stars": 39990,
+            "topics": [
+                "django",
+                "docker",
+                "issue-tracker",
+                "jira",
+                "jira-alternative",
+                "kanban",
+                "linear",
+                "nextjs",
+                "postgresql",
+                "product-management",
+                "project-management",
+                "python",
+                "react",
+                "redis",
+                "rest-api",
+                "typescript",
+                "work-management"
+            ]
+        },
+        {
+            "full_name": "ray-project/ray",
+            "html_url": "https://github.com/ray-project/ray",
+            "description": "Ray is an AI compute engine. Ray consists of a core distributed runtime and a set of AI Libraries for accelerating ML workloads.",
+            "language": "Python",
+            "stars": 39935,
+            "topics": [
+                "data-science",
+                "deep-learning",
+                "deployment",
+                "distributed",
+                "hyperparameter-optimization",
+                "hyperparameter-search",
+                "large-language-models",
+                "llm",
+                "llm-inference",
+                "llm-serving",
+                "machine-learning",
+                "optimization",
+                "parallel",
+                "python",
+                "pytorch",
+                "ray",
+                "reinforcement-learning",
+                "rllib",
+                "serving",
+                "tensorflow"
+            ]
+        },
+        {
+            "full_name": "fastapi/full-stack-fastapi-template",
+            "html_url": "https://github.com/fastapi/full-stack-fastapi-template",
+            "description": "Full stack, modern web application template. Using FastAPI, React, SQLModel, PostgreSQL, Docker, GitHub Actions, automatic HTTPS and more.",
+            "language": "TypeScript",
+            "stars": 39195,
+            "topics": [
+                "backend",
+                "chakra-ui",
+                "docker",
+                "fastapi",
+                "frontend",
+                "json",
+                "json-schema",
+                "jwt",
+                "letsencrypt",
+                "openapi",
+                "postgresql",
+                "python",
+                "react",
+                "sqlmodel",
+                "swagger",
+                "tanstack-query",
+                "tanstack-router",
+                "traefik",
+                "typescript"
+            ]
+        },
+        {
+            "full_name": "2noise/ChatTTS",
+            "html_url": "https://github.com/2noise/ChatTTS",
+            "description": "A generative speech model for daily dialogue.",
+            "language": "Python",
+            "stars": 38181,
+            "topics": [
+                "agent",
+                "chat",
+                "chatgpt",
+                "chattts",
+                "chinese",
+                "chinese-language",
+                "english",
+                "english-language",
+                "gpt",
+                "llm",
+                "llm-agent",
+                "natural-language-inference",
+                "python",
+                "text-to-speech",
+                "torch",
+                "torchaudio",
+                "tts"
+            ]
+        },
+        {
+            "full_name": "gto76/python-cheatsheet",
+            "html_url": "https://github.com/gto76/python-cheatsheet",
+            "description": "Comprehensive Python Cheatsheet",
+            "language": "Python",
+            "stars": 37949,
+            "topics": [
+                "cheatsheet",
+                "python",
+                "python-cheatsheet",
+                "reference"
+            ]
+        },
+        {
+            "full_name": "LAION-AI/Open-Assistant",
+            "html_url": "https://github.com/LAION-AI/Open-Assistant",
+            "description": "OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.",
+            "language": "Python",
+            "stars": 37499,
+            "topics": [
+                "ai",
+                "assistant",
+                "chatgpt",
+                "discord-bot",
+                "language-model",
+                "machine-learning",
+                "nextjs",
+                "python",
+                "rlhf"
+            ]
+        },
+        {
+            "full_name": "httpie/cli",
+            "html_url": "https://github.com/httpie/cli",
+            "description": "🥧 HTTPie CLI  — modern, user-friendly command-line HTTP client for the API era. JSON support, colors, sessions, downloads, plugins & more.",
+            "language": "Python",
+            "stars": 37049,
+            "topics": [
+                "api",
+                "api-client",
+                "api-testing",
+                "cli",
+                "client",
+                "curl",
+                "debugging",
+                "developer-tools",
+                "development",
+                "devops",
+                "http",
+                "http-client",
+                "httpie",
+                "json",
+                "python",
+                "rest",
+                "rest-api",
+                "terminal",
+                "usability",
+                "web"
+            ]
+        },
+        {
+            "full_name": "satwikkansal/wtfpython",
+            "html_url": "https://github.com/satwikkansal/wtfpython",
+            "description": "What the f*ck Python? 😱",
+            "language": "Python",
+            "stars": 36804,
+            "topics": [
+                "documentation",
+                "gotchas",
+                "interview-questions",
+                "pitfalls",
+                "python",
+                "python-interview-questions",
+                "snippets",
+                "wats",
+                "wtf"
+            ]
+        },
+        {
+            "full_name": "pola-rs/polars",
+            "html_url": "https://github.com/pola-rs/polars",
+            "description": "Extremely fast Query Engine for DataFrames, written in Rust",
+            "language": "Rust",
+            "stars": 36178,
+            "topics": [
+                "arrow",
+                "dataframe",
+                "dataframe-library",
+                "dataframes",
+                "out-of-core",
+                "polars",
+                "python",
+                "rust"
+            ]
+        },
+        {
+            "full_name": "roboflow/supervision",
+            "html_url": "https://github.com/roboflow/supervision",
+            "description": "We write your reusable computer vision tools. 💜",
+            "language": "Python",
+            "stars": 35964,
+            "topics": [
+                "classification",
+                "coco",
+                "computer-vision",
+                "deep-learning",
+                "hacktoberfest",
+                "image-processing",
+                "instance-segmentation",
+                "low-code",
+                "machine-learning",
+                "metrics",
+                "object-detection",
+                "oriented-bounding-box",
+                "pascal-voc",
+                "python",
+                "pytorch",
+                "tensorflow",
+                "tracking",
+                "video-processing",
+                "yolo"
+            ]
+        },
+        {
+            "full_name": "sqlmapproject/sqlmap",
+            "html_url": "https://github.com/sqlmapproject/sqlmap",
+            "description": "Automatic SQL injection and database takeover tool",
+            "language": "Python",
+            "stars": 35893,
+            "topics": [
+                "database",
+                "detection",
+                "exploitation",
+                "pentesting",
+                "python",
+                "sql-injection",
+                "sqlmap",
+                "takeover",
+                "vulnerability-scanner"
+            ]
+        },
+        {
+            "full_name": "ManimCommunity/manim",
+            "html_url": "https://github.com/ManimCommunity/manim",
+            "description": "A community-maintained Python framework for creating mathematical animations. ",
+            "language": "Python",
+            "stars": 35657,
+            "topics": [
+                "animations",
+                "hacktoberfest",
+                "manim",
+                "math",
+                "python"
+            ]
+        },
+        {
+            "full_name": "agno-agi/agno",
+            "html_url": "https://github.com/agno-agi/agno",
+            "description": "Multi-agent framework, runtime and control plane. Built for speed, privacy, and scale.",
+            "language": "Python",
+            "stars": 35420,
+            "topics": [
+                "agents",
+                "ai",
+                "ai-agents",
+                "developer-tools",
+                "python"
+            ]
+        },
+        {
+            "full_name": "python-poetry/poetry",
+            "html_url": "https://github.com/python-poetry/poetry",
+            "description": "Python packaging and dependency management made easy",
+            "language": "Python",
+            "stars": 34062,
+            "topics": [
+                "dependency-manager",
+                "package-manager",
+                "packaging",
+                "poetry",
+                "python"
+            ]
+        },
+        {
+            "full_name": "vnpy/vnpy",
+            "html_url": "https://github.com/vnpy/vnpy",
+            "description": "基于Python的开源量化交易平台开发框架",
+            "language": "Python",
+            "stars": 33999,
+            "topics": [
+                "algotrading",
+                "finance",
+                "fintech",
+                "investment",
+                "python",
+                "quant",
+                "trading",
+                "vnpy"
+            ]
+        },
+        {
+            "full_name": "microsoft/qlib",
+            "html_url": "https://github.com/microsoft/qlib",
+            "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
+            "language": "Python",
+            "stars": 33905,
+            "topics": [
+                "algorithmic-trading",
+                "auto-quant",
+                "deep-learning",
+                "finance",
+                "fintech",
+                "investment",
+                "machine-learning",
+                "paper",
+                "platform",
+                "python",
+                "quant",
+                "quant-dataset",
+                "quant-models",
+                "quantitative-finance",
+                "quantitative-trading",
+                "research",
+                "research-paper",
+                "stock-data"
+            ]
+        },
+        {
+            "full_name": "SeleniumHQ/selenium",
+            "html_url": "https://github.com/SeleniumHQ/selenium",
+            "description": "A browser automation framework and ecosystem.",
+            "language": "Java",
+            "stars": 33662,
+            "topics": [
+                "dotnet",
+                "java",
+                "javascript",
+                "python",
+                "ruby",
+                "rust",
+                "selenium",
+                "webdriver"
+            ]
+        },
+        {
+            "full_name": "mouredev/Hello-Python",
+            "html_url": "https://github.com/mouredev/Hello-Python",
+            "description": "Curso para aprender el lenguaje de programación Python desde cero y para principiantes. 100 clases, 44 horas en vídeo, código, proyectos y grupo de chat. Fundamentos, frontend, backend, testing, IA...",
+            "language": "Python",
+            "stars": 32963,
+            "topics": [
+                "backend",
+                "chatgpt",
+                "chatgpt-api",
+                "fastapi",
+                "frontend",
+                "gpt-3",
+                "gpt-4",
+                "mongodb",
+                "openai",
+                "openai-api",
+                "python",
+                "python3",
+                "reflex",
+                "tutorial"
+            ]
+        },
+        {
+            "full_name": "explosion/spaCy",
+            "html_url": "https://github.com/explosion/spaCy",
+            "description": "💫 Industrial-strength Natural Language Processing (NLP) in Python",
+            "language": "Python",
+            "stars": 32843,
+            "topics": [
+                "ai",
+                "artificial-intelligence",
+                "cython",
+                "data-science",
+                "deep-learning",
+                "entity-linking",
+                "machine-learning",
+                "named-entity-recognition",
+                "natural-language-processing",
+                "neural-network",
+                "neural-networks",
+                "nlp",
+                "nlp-library",
+                "python",
+                "spacy",
+                "text-classification",
+                "tokenization"
+            ]
+        },
+        {
+            "full_name": "certbot/certbot",
+            "html_url": "https://github.com/certbot/certbot",
+            "description": "Certbot is EFF's tool to obtain certs from Let's Encrypt and (optionally) auto-enable HTTPS on your server.  It can also act as a client for any other CA that uses the ACME protocol.",
+            "language": "Python",
+            "stars": 32622,
+            "topics": [
+                "acme",
+                "acme-client",
+                "certbot",
+                "certificate",
+                "letsencrypt",
+                "python"
+            ]
+        },
+        {
+            "full_name": "Textualize/textual",
+            "html_url": "https://github.com/Textualize/textual",
+            "description": "The lean application framework for Python.  Build sophisticated user interfaces with a simple Python API. Run your apps in the terminal and a web browser.",
+            "language": "Python",
+            "stars": 32339,
+            "topics": [
+                "cli",
+                "framework",
+                "python",
+                "rich",
+                "terminal",
+                "tui"
+            ]
+        },
+        {
+            "full_name": "facebookresearch/fairseq",
+            "html_url": "https://github.com/facebookresearch/fairseq",
+            "description": "Facebook AI Research Sequence-to-Sequence Toolkit written in Python.",
+            "language": "Python",
+            "stars": 31962,
+            "topics": [
+                "artificial-intelligence",
+                "python",
+                "pytorch"
+            ]
+        },
+        {
+            "full_name": "ocrmypdf/OCRmyPDF",
+            "html_url": "https://github.com/ocrmypdf/OCRmyPDF",
+            "description": "OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched",
+            "language": "Python",
+            "stars": 31805,
+            "topics": [
+                "image-processing",
+                "ocr",
+                "pdf",
+                "python",
+                "tesseract"
+            ]
+        },
+        {
+            "full_name": "LizardByte/Sunshine",
+            "html_url": "https://github.com/LizardByte/Sunshine",
+            "description": "Self-hosted game stream host for Moonlight.",
+            "language": "C++",
+            "stars": 31578,
+            "topics": [
+                "cpp",
+                "docker",
+                "flathub-pkg",
+                "game-stream",
+                "game-streaming",
+                "game-streaming-server",
+                "geforce-experience",
+                "homebrew-pkg",
+                "maintainer-wanted",
+                "moonlight",
+                "pacman-pkg",
+                "python",
+                "remote-desktop",
+                "replicator-custom-issues",
+                "replicator-release-notifications",
+                "rtd",
+                "winget-pkg"
+            ]
+        },
+        {
+            "full_name": "microsoft/Data-Science-For-Beginners",
+            "html_url": "https://github.com/microsoft/Data-Science-For-Beginners",
+            "description": "10 Weeks, 20 Lessons, Data Science for All!",
+            "language": "Jupyter Notebook",
+            "stars": 31373,
+            "topics": [
+                "data-analysis",
+                "data-science",
+                "data-visualization",
+                "microsoft-for-beginners",
+                "pandas",
+                "python"
+            ]
+        },
+        {
+            "full_name": "donnemartin/interactive-coding-challenges",
+            "html_url": "https://github.com/donnemartin/interactive-coding-challenges",
+            "description": "120+ interactive Python coding interview challenges (algorithms and data structures).  Includes Anki flashcards.",
+            "language": "Python",
+            "stars": 30940,
+            "topics": [
+                "algorithm",
+                "coding",
+                "competitive-programming",
+                "data-structure",
+                "development",
+                "interview",
+                "interview-practice",
+                "interview-questions",
+                "programming",
+                "python"
+            ]
+        },
+        {
+            "full_name": "numpy/numpy",
+            "html_url": "https://github.com/numpy/numpy",
+            "description": "The fundamental package for scientific computing with Python.",
+            "language": "Python",
+            "stars": 30867,
+            "topics": [
+                "numpy",
+                "python"
+            ]
+        },
+        {
+            "full_name": "tqdm/tqdm",
+            "html_url": "https://github.com/tqdm/tqdm",
+            "description": ":zap: A Fast, Extensible Progress Bar for Python and CLI",
+            "language": "Python",
+            "stars": 30685,
+            "topics": [
+                "cli",
+                "closember",
+                "console",
+                "discord",
+                "gui",
+                "jupyter",
+                "keras",
+                "meter",
+                "pandas",
+                "parallel",
+                "progress",
+                "progress-bar",
+                "progressbar",
+                "progressmeter",
+                "python",
+                "rate",
+                "telegram",
+                "terminal",
+                "time",
+                "utilities"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+Discussion #3548: Support for "display type" like features?
+State : open
+Author: TommyJerryMairo
+URL   : https://github.com/orgs/x64dbg/discussions/3548
+------------------------------------------------------------
+Does x64dbg support anything like ["Display Type" in windbg](https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/dt--display-type-)? Such a feature should be able to display a struct with filed name, type and offset. When debugging, it could also decode a memory trunk and present the value corresponding to each field. I noticed there's a struct panel in the CPU view. However, it cannot parse complex header files. For example, parsing the `winternl.h` from the Windows Kits always yields an error blaming `unexpected character '#'` , where the header file doesn't cause compilation errors when included. 
+
+Comments:
+---- mrexodia ----
+Yes, this functionality exists but it’s currently undergoing a refactoring. Hopefully a PR will be merged soon with Windows types.
+

@@ -1,0 +1,42 @@
+Issue #3743: Some display issues.
+State : open
+Author: coolvitto
+URL   : https://github.com/x64dbg/x64dbg/issues/3743
+------------------------------------------------------------
+### Operating System
+
+Windows 11 Build 26200.7296
+
+### x64dbg Version
+
+Aug 19 2025
+
+### Describe the issue
+
+1. The context menu for the call stack window is not translated.
+2. The context menu for the bottom pane of symbols is not translated.
+3. The Help submenu is not translated.
+
+(1)
+<img width="269" height="245" alt="Image" src="https://github.com/user-attachments/assets/7fa6c028-3699-413b-a60a-7a0d82ac5756" />
+(2)
+<img width="453" height="111" alt="Image" src="https://github.com/user-attachments/assets/a897dd87-b7eb-4d16-be50-563d31ae3519" />
+
+(3)
+<img width="219" height="167" alt="Image" src="https://github.com/user-attachments/assets/d1ee2aec-15a9-48fc-9746-2b78a35cc3bf" />
+
+
+
+Comments:
+---- mrexodia ----
+You mean they are available to translate at all?
+
+---- coolvitto ----
+may be
+
+<img width="263" height="440" alt="Image" src="https://github.com/user-attachments/assets/7e658b56-8a23-4d40-855e-86f425d4534c" />
+
+<img width="260" height="496" alt="Image" src="https://github.com/user-attachments/assets/85334bf9-d6d5-49f5-a93e-e5891a99aa42" />
+
+<img width="258" height="313" alt="Image" src="https://github.com/user-attachments/assets/52b74945-db8c-4475-94d4-d4aa0340d442" />
+

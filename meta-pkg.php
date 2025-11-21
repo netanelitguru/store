@@ -1,9 +1,9 @@
 #!/usr/bin/env php
 <?php
 /**
- * MetaPkg - single-file PHP meta package manager + simple HTML GUI
+ * MetaPkg - single-file PHP meta package manager + HTML GUI
  *
- * CLI usage examples:
+ * CLI examples:
  *
  *   php meta-pkg.php help
  *
@@ -18,18 +18,25 @@
  *   php meta-pkg.php info oss symfony/symfony
  *   php meta-pkg.php install oss symfony/symfony v7.1.0
  *
- *   # Create GitHub issue (requires GITHUB_TOKEN)
- *   GITHUB_TOKEN=ghp_xxx php meta-pkg.php issue oss owner/repo "Bug title" "Body..."
+ *   # Issues (read/write)
+ *   php meta-pkg.php issues-list    oss owner/repo [state] [limit]
+ *   php meta-pkg.php issues-show    oss owner/repo <number>
+ *   php meta-pkg.php issues-comment oss owner/repo <number> "<body>"
+ *   php meta-pkg.php issue          oss owner/repo "<title>" "<body>"
  *
- *   # Crawl GitHub trending into JSON
+ *   # Discussions (read/write)
+ *   php meta-pkg.php discuss-list    oss owner/repo [limit]
+ *   php meta-pkg.php discuss-show    oss owner/repo <number>
+ *   php meta-pkg.php discuss-comment oss owner/repo <number> "<body>"
+ *   php meta-pkg.php discuss-new     oss owner/repo <categoryName> "<title>" "<body>"
+ *
+ *   # Crawlers
  *   php meta-pkg.php crawl trending trending.json
- *
- *   # Crawl GitHub repos by topic/tag into JSON
  *   php meta-pkg.php crawl tag backup backup-tools.json 50
  *
  * Web GUI:
  *   php -S 127.0.0.1:8000 meta-pkg.php
- *   Open http://127.0.0.1:8000 in browser
+ *   Then open http://127.0.0.1:8000 in your browser
  */
 
 //////////////////////
@@ -59,6 +66,18 @@ if ($GITHUB_TOKEN) {
     $GITHUB_HEADERS[] = 'Authorization: Bearer ' . $GITHUB_TOKEN;
 }
 
+// Polyfills for PHP < 8 helpers (basic)
+if (!function_exists('str_starts_with')) {
+    function str_starts_with(string $haystack, string $needle): bool {
+        return $needle === '' || strncmp($haystack, $needle, strlen($needle)) === 0;
+    }
+}
+if (!function_exists('str_contains')) {
+    function str_contains(string $haystack, string $needle): bool {
+        return $needle === '' || strpos($haystack, $needle) !== false;
+    }
+}
+
 //////////////////////
 // Utility functions
 //////////////////////
@@ -75,8 +94,20 @@ CLI USAGE:
   php meta-pkg.php install <ecosystem> <name> [version]
 
   php meta-pkg.php search oss "<query>"
-  php meta-pkg.php issue  oss <owner/repo> "<title>" "<body>"
 
+  # Issues (read/write)
+  php meta-pkg.php issues-list    oss <owner/repo> [state] [limit]
+  php meta-pkg.php issues-show    oss <owner/repo> <number>
+  php meta-pkg.php issues-comment oss <owner/repo> <number> "<body>"
+  php meta-pkg.php issue          oss <owner/repo> "<title>" "<body>"
+
+  # Discussions (read/write)
+  php meta-pkg.php discuss-list    oss <owner/repo> [limit]
+  php meta-pkg.php discuss-show    oss <owner/repo> <number>
+  php meta-pkg.php discuss-comment oss <owner/repo> <number> "<body>"
+  php meta-pkg.php discuss-new     oss <owner/repo> <categoryName> "<title>" "<body>"
+
+  # Crawlers
   php meta-pkg.php crawl trending <output.json>
   php meta-pkg.php crawl tag <topic> <output.json> [maxResults]
 
@@ -439,13 +470,14 @@ function oss_search_repos(string $query, array $ghHeaders): void {
 
 function oss_new_issue(string $fullName, string $title, string $body, array $ghHeaders, ?string $token): void {
     if (!$token) {
-        fwrite(STDERR, "GITHUB_TOKEN env var is required to create issues." . PHP_EOL);
+        fwrite(STDERR, "GITHUB_TOKEN env var is required to create issues.\n");
         return;
     }
-    $url = "https://api.github.com/repos/" . $fullName . "/issues";
+    $url     = "https://api.github.com/repos/{$fullName}/issues";
     $payload = ['title' => $title, 'body' => $body];
-    $issue = http_post_json($url, $ghHeaders, $payload);
+    $issue   = http_post_json($url, $ghHeaders, $payload);
     if ($issue === null) {
+        fwrite(STDERR, "Failed to create issue in {$fullName}\n");
         return;
     }
     $num  = $issue['number'] ?? '?';
@@ -454,10 +486,241 @@ function oss_new_issue(string $fullName, string $title, string $body, array $ghH
 }
 
 //////////////////////
+// Issues helpers
+//////////////////////
+
+function oss_list_issues(string $fullName, string $state, int $limit, array $ghHeaders): void {
+    $limit = max(1, min($limit, 100));
+    $page  = 1;
+    $collected = 0;
+
+    echo "Issues for {$fullName} (state={$state}):" . PHP_EOL;
+
+    while ($collected < $limit) {
+        $remaining = $limit - $collected;
+        $perPage   = min(100, $remaining);
+        $url = "https://api.github.com/repos/{$fullName}/issues?state={$state}&per_page={$perPage}&page={$page}";
+        $items = http_get_json($url, $ghHeaders);
+        if ($items === null || empty($items)) {
+            break;
+        }
+
+        foreach ($items as $issue) {
+            if (isset($issue['pull_request'])) {
+                continue;
+            }
+            $number = $issue['number'] ?? 0;
+            $title  = $issue['title'] ?? '';
+            $st     = $issue['state'] ?? '';
+            $user   = $issue['user']['login'] ?? '';
+            echo sprintf("#%d [%s] %s (by %s)\n", $number, $st, $title, $user);
+            $collected++;
+            if ($collected >= $limit) {
+                break 2;
+            }
+        }
+
+        $page++;
+    }
+
+    if ($collected === 0) {
+        echo "  (no issues found)\n";
+    }
+}
+
+function oss_show_issue(string $fullName, int $number, array $ghHeaders): void {
+    $url = "https://api.github.com/repos/{$fullName}/issues/{$number}";
+    $issue = http_get_json($url, $ghHeaders);
+    if ($issue === null) {
+        fwrite(STDERR, "Failed to fetch issue #{$number}\n");
+        return;
+    }
+
+    $title = $issue['title'] ?? '';
+    $state = $issue['state'] ?? '';
+    $user  = $issue['user']['login'] ?? '';
+    $body  = $issue['body'] ?? '';
+    $html  = $issue['html_url'] ?? '';
+
+    echo "Issue #{$number}: {$title}" . PHP_EOL;
+    echo "State : {$state}" . PHP_EOL;
+    echo "Author: {$user}" . PHP_EOL;
+    echo "URL   : {$html}" . PHP_EOL;
+    echo str_repeat('-', 60) . PHP_EOL;
+    echo ($body ?: "(no body)") . PHP_EOL;
+
+    $comments = $issue['comments'] ?? 0;
+    if ($comments > 0) {
+        echo PHP_EOL . "Comments:" . PHP_EOL;
+        $cUrl  = "https://api.github.com/repos/{$fullName}/issues/{$number}/comments?per_page=50";
+        $cList = http_get_json($cUrl, $ghHeaders) ?? [];
+        foreach ($cList as $c) {
+            $cUser = $c['user']['login'] ?? '';
+            $cBody = $c['body'] ?? '';
+            echo "---- {$cUser} ----" . PHP_EOL;
+            echo $cBody . PHP_EOL . PHP_EOL;
+        }
+    }
+}
+
+function oss_comment_issue(string $fullName, int $number, string $body, array $ghHeaders, ?string $token): void {
+    if (!$token) {
+        fwrite(STDERR, "GITHUB_TOKEN env var is required to comment on issues.\n");
+        return;
+    }
+    $url     = "https://api.github.com/repos/{$fullName}/issues/{$number}/comments";
+    $payload = ['body' => $body];
+    $res     = http_post_json($url, $ghHeaders, $payload);
+    if ($res === null) {
+        fwrite(STDERR, "Failed to post comment on issue #{$number}\n");
+        return;
+    }
+    $html = $res['html_url'] ?? '';
+    echo "Comment posted on issue #{$number}: {$html}" . PHP_EOL;
+}
+
+//////////////////////
+// Discussions helpers
+//////////////////////
+
+function oss_list_discussions(string $fullName, int $limit, array $ghHeaders): void {
+    $limit = max(1, min($limit, 100));
+    $page  = 1;
+    $collected = 0;
+
+    echo "Discussions for {$fullName}:" . PHP_EOL;
+
+    while ($collected < $limit) {
+        $remaining = $limit - $collected;
+        $perPage   = min(100, $remaining);
+        $url       = "https://api.github.com/repos/{$fullName}/discussions?per_page={$perPage}&page={$page}";
+        $data      = http_get_json($url, $ghHeaders);
+        if ($data === null || empty($data)) {
+            break;
+        }
+
+        foreach ($data as $disc) {
+            $number = $disc['number'] ?? 0;
+            $title  = $disc['title'] ?? '';
+            $state  = $disc['state'] ?? '';
+            $author = $disc['user']['login'] ?? ($disc['author']['login'] ?? '');
+            echo sprintf("#%d [%s] %s (by %s)\n", $number, $state, $title, $author);
+            $collected++;
+            if ($collected >= $limit) {
+                break 2;
+            }
+        }
+
+        $page++;
+    }
+
+    if ($collected === 0) {
+        echo "  (no discussions found or discussions disabled)\n";
+    }
+}
+
+function oss_show_discussion(string $fullName, int $number, array $ghHeaders): void {
+    $url  = "https://api.github.com/repos/{$fullName}/discussions/{$number}";
+    $disc = http_get_json($url, $ghHeaders);
+    if ($disc === null) {
+        fwrite(STDERR, "Failed to fetch discussion #{$number}\n");
+        return;
+    }
+
+    $title = $disc['title'] ?? '';
+    $state = $disc['state'] ?? '';
+    $user  = $disc['user']['login'] ?? ($disc['author']['login'] ?? '');
+    $body  = $disc['body'] ?? '';
+    $html  = $disc['html_url'] ?? '';
+
+    echo "Discussion #{$number}: {$title}" . PHP_EOL;
+    echo "State : {$state}" . PHP_EOL;
+    echo "Author: {$user}" . PHP_EOL;
+    echo "URL   : {$html}" . PHP_EOL;
+    echo str_repeat('-', 60) . PHP_EOL;
+    echo ($body ?: "(no body)") . PHP_EOL;
+
+    $cUrl  = "https://api.github.com/repos/{$fullName}/discussions/{$number}/comments?per_page=50";
+    $cList = http_get_json($cUrl, $ghHeaders) ?? [];
+    if (!empty($cList)) {
+        echo PHP_EOL . "Comments:" . PHP_EOL;
+        foreach ($cList as $c) {
+            $cUser = $c['user']['login'] ?? '';
+            $cBody = $c['body'] ?? '';
+            echo "---- {$cUser} ----" . PHP_EOL;
+            echo $cBody . PHP_EOL . PHP_EOL;
+        }
+    }
+}
+
+function oss_comment_discussion(string $fullName, int $number, string $body, array $ghHeaders, ?string $token): void {
+    if (!$token) {
+        fwrite(STDERR, "GITHUB_TOKEN env var is required to comment on discussions.\n");
+        return;
+    }
+    $url     = "https://api.github.com/repos/{$fullName}/discussions/{$number}/comments";
+    $payload = ['body' => $body];
+    $res     = http_post_json($url, $ghHeaders, $payload);
+    if ($res === null) {
+        fwrite(STDERR, "Failed to post comment on discussion #{$number}\n");
+        return;
+    }
+    $html = $res['html_url'] ?? '';
+    echo "Comment posted on discussion #{$number}: {$html}" . PHP_EOL;
+}
+
+function oss_get_discussion_category_id(string $fullName, string $categoryName, array $ghHeaders): ?int {
+    $url  = "https://api.github.com/repos/{$fullName}/discussions/categories";
+    $cats = http_get_json($url, $ghHeaders);
+    if ($cats === null || empty($cats)) {
+        fwrite(STDERR, "Could not fetch discussion categories for {$fullName}\n");
+        return null;
+    }
+
+    foreach ($cats as $cat) {
+        $name = $cat['name'] ?? '';
+        if (strcasecmp($name, $categoryName) === 0) {
+            return (int)($cat['id'] ?? 0);
+        }
+    }
+
+    fwrite(STDERR, "Category '{$categoryName}' not found for {$fullName}\n");
+    return null;
+}
+
+function oss_create_discussion(string $fullName, string $categoryName, string $title, string $body, array $ghHeaders, ?string $token): void {
+    if (!$token) {
+        fwrite(STDERR, "GITHUB_TOKEN env var is required to create discussions.\n");
+        return;
+    }
+
+    $catId = oss_get_discussion_category_id($fullName, $categoryName, $ghHeaders);
+    if (!$catId) {
+        return;
+    }
+
+    $url     = "https://api.github.com/repos/{$fullName}/discussions";
+    $payload = [
+        'title'       => $title,
+        'body'        => $body,
+        'category_id' => $catId,
+    ];
+
+    $res = http_post_json($url, $ghHeaders, $payload);
+    if ($res === null) {
+        fwrite(STDERR, "Failed to create discussion in {$fullName}\n");
+        return;
+    }
+
+    $num  = $res['number'] ?? '?';
+    $html = $res['html_url'] ?? '';
+    echo "Created discussion #{$num} at {$html}" . PHP_EOL;
+}
+
+//////////////////////
 // Crawlers
 //////////////////////
 
-// GitHub trending HTML (no API)
 function crawl_github_trending(string $outFile): void {
     $url = "https://github.com/trending";
     $html = @file_get_contents($url);
@@ -512,15 +775,16 @@ function crawl_github_trending(string $outFile): void {
 /**
  * Crawl GitHub repositories by topic/tag and store JSON.
  */
-function crawl_github_by_topic(string $topic, int $maxResults, string $outFile, array $ghHeaders): void {
+function crawl_github_by_topic(string $topic, int $maxResults,  array $ghHeaders): void {
     $maxResults = max(1, min($maxResults, 100));
+$outFile=$topic . '.json';
 
     $all = [];
     $page = 1;
 
     while (count($all) < $maxResults) {
         $remaining = $maxResults - count($all);
-        $perPage   = min(100, $remaining);
+        $perPage   = min(1000, $remaining);
 
         $q   = urlencode('topic:' . $topic . ' is:public');
         $url = "https://api.github.com/search/repositories?q={$q}&sort=stars&order=desc&per_page={$perPage}&page={$page}";
@@ -545,7 +809,7 @@ function crawl_github_by_topic(string $topic, int $maxResults, string $outFile, 
                 'topics'      => $item['topics'] ?? [],
             ];
             if (count($all) >= $maxResults) {
-                break;
+                break 2;
             }
         }
 
@@ -776,7 +1040,7 @@ if (php_sapi_name() === 'cli') {
     global $GITHUB_HEADERS, $GITHUB_TOKEN, $META_ROOT;
 
     $argv0 = $argv[0] ?? null;
-    array_shift($argv); // drop script name
+    array_shift($argv);
 
     $command   = $argv[0] ?? null;
     $ecosystem = $argv[1] ?? null;
@@ -831,13 +1095,89 @@ if (php_sapi_name() === 'cli') {
             break;
 
         case 'issue':
+            // php meta-pkg.php issue oss owner/repo "<title>" "<body>"
             if (strtolower($ecosystem) !== 'oss' || !$name || !$version || !$arg1) {
                 fwrite(STDERR, "Usage: php meta-pkg.php issue oss <owner/repo> \"<title>\" \"<body>\"" . PHP_EOL);
                 show_help();
                 exit(1);
             }
-            // here: $name = owner/repo, $version = title, $arg1 = body
             oss_new_issue($name, $version, $arg1, $GITHUB_HEADERS, $GITHUB_TOKEN);
+            break;
+
+        case 'issues-list':
+            // php meta-pkg.php issues-list oss owner/repo [state] [limit]
+            if (strtolower($ecosystem) !== 'oss' || !$name) {
+                fwrite(STDERR, "Usage: php meta-pkg.php issues-list oss <owner/repo> [state] [limit]\n");
+                show_help();
+                exit(1);
+            }
+            $state = $version ?: 'open';
+            $limit = $arg1 ? (int)$arg1 : 20;
+            oss_list_issues($name, $state, $limit, $GITHUB_HEADERS);
+            break;
+
+        case 'issues-show':
+            // php meta-pkg.php issues-show oss owner/repo <number>
+            if (strtolower($ecosystem) !== 'oss' || !$name || !$version) {
+                fwrite(STDERR, "Usage: php meta-pkg.php issues-show oss <owner/repo> <number>\n");
+                show_help();
+                exit(1);
+            }
+            oss_show_issue($name, (int)$version, $GITHUB_HEADERS);
+            break;
+
+        case 'issues-comment':
+            // php meta-pkg.php issues-comment oss owner/repo <number> "<body>"
+            if (strtolower($ecosystem) !== 'oss' || !$name || !$version || !$arg1) {
+                fwrite(STDERR, "Usage: php meta-pkg.php issues-comment oss <owner/repo> <number> \"<body>\"\n");
+                show_help();
+                exit(1);
+            }
+            oss_comment_issue($name, (int)$version, $arg1, $GITHUB_HEADERS, $GITHUB_TOKEN);
+            break;
+
+        case 'discuss-list':
+            // php meta-pkg.php discuss-list oss owner/repo [limit]
+            if (strtolower($ecosystem) !== 'oss' || !$name) {
+                fwrite(STDERR, "Usage: php meta-pkg.php discuss-list oss <owner/repo> [limit]\n");
+                show_help();
+                exit(1);
+            }
+            $limit = $version ? (int)$version : 20;
+            oss_list_discussions($name, $limit, $GITHUB_HEADERS);
+            break;
+
+        case 'discuss-show':
+            // php meta-pkg.php discuss-show oss owner/repo <number>
+            if (strtolower($ecosystem) !== 'oss' || !$name || !$version) {
+                fwrite(STDERR, "Usage: php meta-pkg.php discuss-show oss <owner/repo> <number>\n");
+                show_help();
+                exit(1);
+            }
+            oss_show_discussion($name, (int)$version, $GITHUB_HEADERS);
+            break;
+
+        case 'discuss-comment':
+            // php meta-pkg.php discuss-comment oss owner/repo <number> "<body>"
+            if (strtolower($ecosystem) !== 'oss' || !$name || !$version || !$arg1) {
+                fwrite(STDERR, "Usage: php meta-pkg.php discuss-comment oss <owner/repo> <number> \"<body>\"\n");
+                show_help();
+                exit(1);
+            }
+            oss_comment_discussion($name, (int)$version, $arg1, $GITHUB_HEADERS, $GITHUB_TOKEN);
+            break;
+
+        case 'discuss-new':
+            // php meta-pkg.php discuss-new oss owner/repo <categoryName> "<title>" "<body>"
+            if (strtolower($ecosystem) !== 'oss' || !$name || !$version || !$arg1 || !$arg2) {
+                fwrite(STDERR, "Usage: php meta-pkg.php discuss-new oss <owner/repo> <categoryName> \"<title>\" \"<body>\"\n");
+                show_help();
+                exit(1);
+            }
+            $categoryName = $version;
+            $title        = $arg1;
+            $body         = $arg2;
+            oss_create_discussion($name, $categoryName, $title, $body, $GITHUB_HEADERS, $GITHUB_TOKEN);
             break;
 
         case 'crawl':
@@ -852,7 +1192,7 @@ if (php_sapi_name() === 'cli') {
                 $topic   = $name;
                 $outFile = $version;
                 $max     = $arg1 ? (int)$arg1 : 50;
-                crawl_github_by_topic($topic, $max, $outFile, $GITHUB_HEADERS);
+                crawl_github_by_topic($topic, $max, $GITHUB_HEADERS);
                 break;
             }
 
@@ -872,7 +1212,7 @@ if (php_sapi_name() === 'cli') {
 
 // ---------- WEB GUI MODE ----------
 
-global $GITHUB_HEADERS, $META_ROOT;
+global $GITHUB_HEADERS, $GITHUB_TOKEN, $META_ROOT;
 
 $action    = $_GET['action']    ?? '';
 $eco       = $_GET['ecosystem'] ?? '';
@@ -880,11 +1220,45 @@ $name      = $_GET['name']      ?? '';
 $version   = $_GET['version']   ?? '';
 $topic     = $_GET['topic']     ?? '';
 $query     = $_GET['query']     ?? '';
-$output    = null;
-$message   = '';
 
+$issueRepo   = $_GET['issue_repo']   ?? '';
+$issueState  = $_GET['issue_state']  ?? 'open';
+$issueLimit  = (int)($_GET['issue_limit'] ?? 20);
+$issueNumber = (int)($_GET['issue_number'] ?? 0);
+$issueTitle  = $_GET['issue_title']  ?? '';
+$issueBody   = $_GET['issue_body']   ?? '';
+
+$discRepo     = $_GET['disc_repo']     ?? '';
+$discLimit    = (int)($_GET['disc_limit'] ?? 20);
+$discNumber   = (int)($_GET['disc_number'] ?? 0);
+$discCategory = $_GET['disc_category'] ?? '';
+$discTitle    = $_GET['disc_title']    ?? '';
+$discBody     = $_GET['disc_body']     ?? '';
+
+$output  = null;
+$message = '';
+
+function save_web_log(string $prefix, string $suffix, string $content): void {
+    // sanitize "owner/repo" → "owner_repo"
+    $safePrefix = preg_replace('/[^A-Za-z0-9_\-\.]/', '_', $prefix);
+    $safeSuffix = preg_replace('/[^A-Za-z0-9_\-\.]/', '_', $suffix);
+
+    $dir = __DIR__ . '/logs';
+    if (!is_dir($dir)) {
+        mkdir($dir, 0777, true);
+    }
+
+    $filename = $dir . '/' . $safePrefix;
+    if ($safeSuffix !== '') {
+        $filename .= '_' . $safeSuffix;
+    }
+    $filename .= '.txt';
+
+    file_put_contents($filename, $content);
+}
 if ($action === 'info' && $eco && $name) {
     $output = get_package($eco, $name, $GITHUB_HEADERS);
+
 } elseif ($action === 'deps' && $eco && $name) {
     $pkg = get_package($eco, $name, $GITHUB_HEADERS);
     if ($pkg) {
@@ -895,18 +1269,85 @@ if ($action === 'info' && $eco && $name) {
             $output = get_version_info($eco, $pkg, $version);
         }
     }
+
 } elseif ($action === 'search_oss' && $query) {
-    // capture search results into buffer and show as text
     ob_start();
     oss_search_repos($query, $GITHUB_HEADERS);
     $message = ob_get_clean();
+
 } elseif ($action === 'crawl_topic' && $topic) {
+    // use a temp file + correct function signature
     $tmp = sys_get_temp_dir() . '/crawl-' . preg_replace('/\W+/', '_', $topic) . '.json';
-    crawl_github_by_topic($topic, 20, $tmp, $GITHUB_HEADERS);
+    crawl_github_by_topic($topic, 2000,  $GITHUB_HEADERS); // max clamped inside function
+
     $json = @file_get_contents($tmp);
     if ($json) {
         $output = json_decode($json, true);
     }
+
+} elseif ($action === 'issues_list' && $issueRepo) {
+    ob_start();
+    oss_list_issues($issueRepo, $issueState, $issueLimit, $GITHUB_HEADERS);
+    $message = ob_get_clean();
+
+    // log: repo + "issues"
+    save_web_log($issueRepo, 'issues', $message);
+
+} elseif ($action === 'issues_show' && $issueRepo && $issueNumber) {
+    ob_start();
+    oss_show_issue($issueRepo, $issueNumber, $GITHUB_HEADERS);
+    $message = ob_get_clean();
+
+    // log: repo + issue number
+    save_web_log($issueRepo, 'issue_' . $issueNumber, $message);
+
+} elseif ($action === 'issues_comment' && $issueRepo && $issueNumber && $issueBody) {
+    ob_start();
+    oss_comment_issue($issueRepo, $issueNumber, $issueBody, $GITHUB_HEADERS, $GITHUB_TOKEN);
+    $message = ob_get_clean();
+
+    // log response to same file
+    save_web_log($issueRepo, 'issue_' . $issueNumber, $message);
+
+} elseif ($action === 'issue_new' && $issueRepo && $issueTitle && $issueBody) {
+    ob_start();
+    oss_new_issue($issueRepo, $issueTitle, $issueBody, $GITHUB_HEADERS, $GITHUB_TOKEN);
+    $message = ob_get_clean();
+
+    // log creation result
+    save_web_log($issueRepo, 'issue_new', $message);
+
+} elseif ($action === 'disc_list' && $discRepo) {
+    ob_start();
+    oss_list_discussions($discRepo, $discLimit, $GITHUB_HEADERS);
+    $message = ob_get_clean();
+
+    // log: repo + discussions
+    save_web_log($discRepo, 'discussions', $message);
+
+} elseif ($action === 'disc_show' && $discRepo && $discNumber) {
+    ob_start();
+    oss_show_discussion($discRepo, $discNumber, $GITHUB_HEADERS);
+    $message = ob_get_clean();
+
+    // log: repo + discussion number
+    save_web_log($discRepo, 'disc_' . $discNumber, $message);
+
+} elseif ($action === 'disc_comment' && $discRepo && $discNumber && $discBody) {
+    ob_start();
+    oss_comment_discussion($discRepo, $discNumber, $discBody, $GITHUB_HEADERS, $GITHUB_TOKEN);
+    $message = ob_get_clean();
+
+    // log: same discussion file
+    save_web_log($discRepo, 'disc_' . $discNumber, $message);
+
+} elseif ($action === 'disc_new' && $discRepo && $discCategory && $discTitle && $discBody) {
+    ob_start();
+    oss_create_discussion($discRepo, $discCategory, $discTitle, $discBody, $GITHUB_HEADERS, $GITHUB_TOKEN);
+    $message = ob_get_clean();
+
+    // log: new discussion result
+    save_web_log($discRepo, 'disc_new', $message);
 }
 
 ?>
@@ -920,16 +1361,18 @@ if ($action === 'info' && $eco && $name) {
     h1 { margin-top: 0; }
     .section { border: 1px solid #ccc; padding: 12px 16px; border-radius: 10px; margin-bottom: 20px; }
     label { display: block; margin-top: 6px; }
-    input[type=text] { width: 320px; padding: 4px; }
+    input[type=text], textarea { width: 100%; max-width: 600px; padding: 4px; }
     select { padding: 4px; }
     button { margin-top: 8px; padding: 6px 10px; cursor: pointer; }
-    textarea { width: 100%; height: 260px; font-family: monospace; font-size: 12px; }
+    textarea { height: 260px; font-family: monospace; font-size: 12px; }
     pre { background: #f7f7f7; padding: 10px; border-radius: 6px; overflow-x: auto; }
+    small { color: #555; }
   </style>
 </head>
 <body>
   <h1>MetaPkg – Web UI</h1>
-  <p><strong>Hint:</strong> From CLI use: <code>php meta-pkg.php help</code></p>
+  <p><strong>CLI hint:</strong> <code>php meta-pkg.php help</code></p>
+  <p><strong>Note:</strong> Write operations on GitHub (issues/discussions) require <code>GITHUB_TOKEN</code> environment variable.</p>
 
   <div class="section">
     <h2>Package Info / Deps</h2>
@@ -986,6 +1429,156 @@ if ($action === 'info' && $eco && $name) {
         <input type="text" name="topic" value="<?php echo htmlspecialchars($topic); ?>" required>
       </label>
       <button type="submit">Crawl</button>
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>GitHub Issues</h2>
+    <h3>List Issues</h3>
+    <form method="get">
+      <input type="hidden" name="action" value="issues_list">
+      <label>
+        Repo (owner/repo):
+        <input type="text" name="issue_repo" value="<?php echo htmlspecialchars($issueRepo); ?>">
+      </label>
+      <label>
+        State:
+        <select name="issue_state">
+          <option value="open"   <?php if ($issueState==='open') echo 'selected'; ?>>open</option>
+          <option value="closed" <?php if ($issueState==='closed') echo 'selected'; ?>>closed</option>
+          <option value="all"    <?php if ($issueState==='all') echo 'selected'; ?>>all</option>
+        </select>
+      </label>
+      <label>
+        Limit:
+        <input type="text" name="issue_limit" value="<?php echo htmlspecialchars((string)$issueLimit); ?>">
+      </label>
+      <button type="submit">List</button>
+    </form>
+
+    <h3>Show Issue</h3>
+    <form method="get">
+      <input type="hidden" name="action" value="issues_show">
+      <label>
+        Repo (owner/repo):
+        <input type="text" name="issue_repo" value="<?php echo htmlspecialchars($issueRepo); ?>">
+      </label>
+      <label>
+        Issue #:
+        <input type="text" name="issue_number" value="<?php echo htmlspecialchars((string)$issueNumber); ?>">
+      </label>
+      <button type="submit">Show</button>
+    </form>
+
+    <h3>New Issue</h3>
+    <form method="get">
+      <input type="hidden" name="action" value="issue_new">
+      <label>
+        Repo (owner/repo):
+        <input type="text" name="issue_repo" value="<?php echo htmlspecialchars($issueRepo); ?>">
+      </label>
+      <label>
+        Title:
+        <input type="text" name="issue_title" value="<?php echo htmlspecialchars($issueTitle); ?>">
+      </label>
+      <label>
+        Body:
+        <textarea name="issue_body"><?php echo htmlspecialchars($issueBody); ?></textarea>
+      </label>
+      <small>Requires <code>GITHUB_TOKEN</code> with <code>repo</code> scope.</small><br>
+      <button type="submit">Create Issue</button>
+    </form>
+
+    <h3>Comment on Issue</h3>
+    <form method="get">
+      <input type="hidden" name="action" value="issues_comment">
+      <label>
+        Repo (owner/repo):
+        <input type="text" name="issue_repo" value="<?php echo htmlspecialchars($issueRepo); ?>">
+      </label>
+      <label>
+        Issue #:
+        <input type="text" name="issue_number" value="<?php echo htmlspecialchars((string)$issueNumber); ?>">
+      </label>
+      <label>
+        Comment:
+        <textarea name="issue_body"><?php echo htmlspecialchars($issueBody); ?></textarea>
+      </label>
+      <small>Requires <code>GITHUB_TOKEN</code>.</small><br>
+      <button type="submit">Post Comment</button>
+    </form>
+  </div>
+
+  <div class="section">
+    <h2>GitHub Discussions</h2>
+    <h3>List Discussions</h3>
+    <form method="get">
+      <input type="hidden" name="action" value="disc_list">
+      <label>
+        Repo (owner/repo):
+        <input type="text" name="disc_repo" value="<?php echo htmlspecialchars($discRepo); ?>">
+      </label>
+      <label>
+        Limit:
+        <input type="text" name="disc_limit" value="<?php echo htmlspecialchars((string)$discLimit); ?>">
+      </label>
+      <button type="submit">List</button>
+    </form>
+
+    <h3>Show Discussion</h3>
+    <form method="get">
+      <input type="hidden" name="action" value="disc_show">
+      <label>
+        Repo (owner/repo):
+        <input type="text" name="disc_repo" value="<?php echo htmlspecialchars($discRepo); ?>">
+      </label>
+      <label>
+        Discussion #:
+        <input type="text" name="disc_number" value="<?php echo htmlspecialchars((string)$discNumber); ?>">
+      </label>
+      <button type="submit">Show</button>
+    </form>
+
+    <h3>New Discussion</h3>
+    <form method="get">
+      <input type="hidden" name="action" value="disc_new">
+      <label>
+        Repo (owner/repo):
+        <input type="text" name="disc_repo" value="<?php echo htmlspecialchars($discRepo); ?>">
+      </label>
+      <label>
+        Category name:
+        <input type="text" name="disc_category" value="<?php echo htmlspecialchars($discCategory); ?>" placeholder="e.g. General, Ideas">
+      </label>
+      <label>
+        Title:
+        <input type="text" name="disc_title" value="<?php echo htmlspecialchars($discTitle); ?>">
+      </label>
+      <label>
+        Body:
+        <textarea name="disc_body"><?php echo htmlspecialchars($discBody); ?></textarea>
+      </label>
+      <small>Requires <code>GITHUB_TOKEN</code> and discussions enabled in the repo.</small><br>
+      <button type="submit">Create Discussion</button>
+    </form>
+
+    <h3>Comment on Discussion</h3>
+    <form method="get">
+      <input type="hidden" name="action" value="disc_comment">
+      <label>
+        Repo (owner/repo):
+        <input type="text" name="disc_repo" value="<?php echo htmlspecialchars($discRepo); ?>">
+      </label>
+      <label>
+        Discussion #:
+        <input type="text" name="disc_number" value="<?php echo htmlspecialchars((string)$discNumber); ?>">
+      </label>
+      <label>
+        Comment:
+        <textarea name="disc_body"><?php echo htmlspecialchars($discBody); ?></textarea>
+      </label>
+      <small>Requires <code>GITHUB_TOKEN</code>.</small><br>
+      <button type="submit">Post Comment</button>
     </form>
   </div>
 
